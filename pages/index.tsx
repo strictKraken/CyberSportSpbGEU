@@ -1,10 +1,31 @@
-import type { NextPage } from "next"
-import Head from "next/head"
-import Image from "next/image"
-import styles from "../styles/Home.module.css"
+import type { NextPage } from "next";
+import MainLayout from "../layouts/MainLayout";
+import IconArrowRight from "../components/icons-svg/IconArrowRight";
 
-const Home: NextPage = () => {
-  return <div></div>
-}
+import Head from "next/head";
+import Image from "next/image";
+import PurpleButton from "../components/buttons/PurpleButton";
+import CardNews from "../components/cards/CardNews";
 
-export default Home
+const SectionCarusel = () => (
+  <section className="container px-[60px]">
+    <div>carusel</div>
+    <PurpleButton onClick={() => {}}>
+      все новости
+      <IconArrowRight />
+    </PurpleButton>
+    <div className="h-1"></div>
+    <PurpleButton>стать участником</PurpleButton>
+    <CardNews title="ребрендинг"></CardNews>
+  </section>
+);
+
+const Home: NextPage = () => (
+  <MainLayout>
+    <div className="h-screen bg-main-bg">
+      <SectionCarusel />
+    </div>
+  </MainLayout>
+);
+
+export default Home;

@@ -1,5 +1,5 @@
 {
-  "semi": false,
+  "semi": true,
   "trailingComma": "all",
   "signleQuote": false,
   "tabWidth": 2
