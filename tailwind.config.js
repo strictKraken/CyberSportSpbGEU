@@ -12,7 +12,8 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        'main-4': 'repeat(auto-fill, minmax(312px, 1fr))'
+        'main-4': 'repeat(auto-fill, minmax(312px, 1fr))',
+        'news-grid': 'repat(auto-fit, minmax(324px,1fr))',
       },
       colors: {
         "main-bg": "#1c1c1e",

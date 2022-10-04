@@ -2,7 +2,13 @@ import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 
 import MainLayout from "../layouts/MainLayout";
+// Icons
 import IconArrowRight from "../components/icons-svg/IconArrowRight";
+import IconDiscord from "../components/icons-svg/IconDiscord";
+import IconTwitch from "../components/icons-svg/IconTwitch";
+import IconTelegram from "../components/icons-svg/IconTelegram";
+import IconVk from "../components/icons-svg/IconVk";
+
 import testImg from "../public/images/1.png";
 import logoPng from "../public/images/LogoPng.png";
 
@@ -85,6 +91,7 @@ import miniDota from '../public/images/list-games/dota.png';
 import miniCS from '../public/images/list-games/cs.png';
 import miniHS from '../public/images/list-games/hearth-stone.png';
 import miniSC from '../public/images/list-games/star-craft.png';
+import CardSocial from "../components/cards/CardSocial";
 
 const SectionInfo = () => {
   
@@ -166,12 +173,25 @@ const SectionNews = () => (
   </section>
 );
 
+
 const SectionContacts = () => (
-  <section className="container mx-auto max-w-[1360px] px-5 pt-[60px]">
+  <section className="container mx-auto max-w-[1360px] px-5 pt-[60px] pb-[60px]">
     <h3 className="font-heading text-[50px]">мы в соц. сетях</h3>
-    <div>
-      <div>присоединяйся в наш discord!</div>
-    </div>
+      <div className="grid grid-cols-[324px_324px_324px_324px] gap-[24px]">
+        <CardSocial className="col-span-2 h-[244px]" title="присоединяйся в наш discord!">
+          <IconDiscord/>
+        </CardSocial>
+        <CardSocial className="row-span-2"   title="присоединяйся в наш twitch!">
+          <IconTwitch/>
+        </CardSocial>
+        <CardSocial className="row-span-2 "  title="присоединяйся в наш tg!">
+          <IconTelegram className="group-hover:fill-purpule"/>
+        </CardSocial>
+        <CardSocial className="col-span-2 h-[244px]"  title="присоединяйся
+в наш vk!">
+          <IconVk/>
+        </CardSocial>
+      </div>
   </section>
 );
 
