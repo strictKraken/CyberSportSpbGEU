@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     screens: {},
+    fontFamily: {
+      heading: ["Batman Forever"],
+      text: ["Arial"],
+    },
     extend: {
       colors: {
         "main-bg": "#1c1c1e",
