@@ -7,7 +7,10 @@
   src: url("../fonts/Batman/batmfa__.woff");
 }
 
-@import "./vars.css";
+@import "./_vars.css";
+
+@import "./my-swiper.css";
+
 html,
 body {
   padding: 0;
@@ -36,7 +39,7 @@ header {
   z-index: 999;
   position: fixed;
   top: 0;
-  background-color: #1c1c1e;
+  background: transparent;
 }
 
 footer {

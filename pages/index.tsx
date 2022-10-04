@@ -11,9 +11,16 @@ import logoPng from "../public/images/LogoPng.png";
 import PurpleButton from "../components/buttons/PurpleButton";
 import CardNews from "../components/cards/CardNews";
 
+//
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import Slide1 from "../public/images/caruselExmpl.png";
+
 export const getStaticProps: GetStaticProps = async () => {
   const news = [];
-
   return {
     props: {
       news,
@@ -40,13 +47,44 @@ const SectionTest = () => (
 );
 
 const SectionCarusel = () => (
-  <section className="container mx-auto max-w-[1360px] px-5">
-    <div></div>
+  <section className="h-[632px]">
+    <Swiper
+      slidesPerView={1}
+      pagination={{
+        clickable: true,
+      }}
+      navigation
+      modules={[Pagination, Navigation]}
+    >
+      <SwiperSlide>
+        <div className="relative h-full">
+          <div className="absolute top-0 left-0 -z-10 bottom-0 right-0">
+            <Image
+              src={Slide1}
+              alt="slide 1"
+              objectFit="cover"
+              layout="fill"
+              className="top-0"
+            />
+          </div>
+          <div className="px-[60px] flex flex-col justify-center h-full">
+            <h2 className="font-heading text-[60px] max-w-[708px] leading-[61px] mb-11">
+              Становись частью команды
+            </h2>
+            <span className="font-text text-base">
+              Вступай в новую команду киберспорта и развивайся в любимом деле
+            </span>
+          </div>
+        </div>
+      </SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
   </section>
 );
 
 const SectionInfo = () => (
-  <section className="container mx-auto max-w-[1360px] px-5">
+  <section className="container mx-auto max-w-[1360px] px-5 pt-[120px]">
     <div className="flex items-center justify-between flex-wrap mb-[142px]">
       <div className="flex-1 basis-1/2">
         <div className="max-w-[536px] max-h-[416px] relative">
@@ -84,7 +122,7 @@ const SectionInfo = () => (
 );
 
 const SectionNews = () => (
-  <section className="container mx-auto max-w-[1360px] px-5">
+  <section className="container mx-auto max-w-[1360px] px-5 pt-[120px]">
     <h3 className="font-heading text-[50px]">последние новости</h3>
     <div>
       <CardNews
@@ -111,7 +149,7 @@ const SectionNews = () => (
 );
 
 const SectionContacts = () => (
-  <section className="container mx-auto max-w-[1360px] px-5">
+  <section className="container mx-auto max-w-[1360px] px-5 pt-[60px]">
     <h3 className="font-heading text-[50px]">мы в соц. сетях</h3>
     <div>
       <div>присоединяйся в наш discord!</div>
@@ -127,8 +165,7 @@ const Home: NextPage = () => (
       <SectionNews />
       <SectionContacts />
     </div>
-    {/* shadow */}
-    <div className="h-[78px] w-full bg-gradient-to-b from-shadowFooter"></div>
+    <div className="h-[78px] w-full bg-gradient-to-b from-shadowFooter" />
   </MainLayout>
 );
 
