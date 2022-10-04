@@ -11,6 +11,9 @@ module.exports = {
       text: ["Arial"],
     },
     extend: {
+      gridTemplateColumns: {
+        'main-4': 'repeat(auto-fill, minmax(312px, 1fr))'
+      },
       colors: {
         "main-bg": "#1c1c1e",
         purpule: "#6C48D1",

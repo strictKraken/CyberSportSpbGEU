@@ -31,7 +31,7 @@ const navList = [
     link: "",
   },
   {
-    name: "твич",
+    name: "twitch",
     link: "/stream",
   },
 ];
