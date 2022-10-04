@@ -87,59 +87,57 @@ const SectionCarusel = () => (
   </section>
 );
 
-import miniDota from '../public/images/list-games/dota.png';
-import miniCS from '../public/images/list-games/cs.png';
-import miniHS from '../public/images/list-games/hearth-stone.png';
-import miniSC from '../public/images/list-games/star-craft.png';
+import miniDota from "../public/images/list-games/dota.png";
+import miniCS from "../public/images/list-games/cs.png";
+import miniHS from "../public/images/list-games/hearth-stone.png";
+import miniSC from "../public/images/list-games/star-craft.png";
 import CardSocial from "../components/cards/CardSocial";
 
 const SectionInfo = () => {
-  
   const listGames = [miniDota, miniCS, miniHS, miniSC];
-  
+
   return (
     <>
-    <section className="container mx-auto max-w-[1360px] px-5 pt-[120px]">
-      <div className="flex items-center justify-between flex-wrap mb-[142px]">
-        <div className="flex-1 basis-1/2">
-          <div className="max-w-[536px] max-h-[416px] relative">
-            <Image
-              src={logoPng}
-              width={536}
-              height={416}
-              alt="logo"
-              objectFit="cover"
-            />
+      <section className="container mx-auto max-w-[1360px] px-5 pt-[120px]">
+        <div className="flex items-center justify-between flex-wrap mb-[142px]">
+          <div className="flex-1 basis-1/2">
+            <div className="max-w-[536px] max-h-[416px] relative">
+              <Image
+                src={logoPng}
+                width={536}
+                height={416}
+                alt="logo"
+                objectFit="cover"
+              />
+            </div>
+          </div>
+          <div className="w-[536px]">
+            <h3 className="font-heading text-[50px]">wild griffins</h3>
+            <p className="font-text text-base indent-3">
+              Мы киберспортивная организация на базе Санкт-Петербургского
+              государственного экономического университета, направленная на
+              продвижение игроков и проведение турниров по Dota 2, CS:GO,
+              Hearthstone, Starcraft.
+            </p>
+            <p className="font-text text-base indent-3">
+              Наша команда уже не раз становилась участником разнообразных
+              турниров по многим дисциплинам и неоднократно побеждала на них.
+            </p>
           </div>
         </div>
-        <div className="w-[536px]">
-          <h3 className="font-heading text-[50px]">wild griffins</h3>
-          <p className="font-text text-base indent-3">
-            Мы киберспортивная организация на базе Санкт-Петербургского
-            государственного экономического университета, направленная на
-            продвижение игроков и проведение турниров по Dota 2, CS:GO,
-            Hearthstone, Starcraft.
-          </p>
-          <p className="font-text text-base indent-3">
-            Наша команда уже не раз становилась участником разнообразных турниров
-            по многим дисциплинам и неоднократно побеждала на них.
-          </p>
+        {/* карусель из игр */}
+      </section>
+      <div className="container mx-auto max-w-[1360px]">
+        <div className="flex">
+          {listGames.map((item) => (
+            <div key={item.src}>
+              <Image src={item} alt="game image of list" />
+            </div>
+          ))}
         </div>
       </div>
-      {/* карусель из игр */}
-    </section>
-    <div className="container mx-auto max-w-[1360px]">
-      <div className="flex">
-      { listGames.map(item => (
-        <div key={item.src}>
-          <Image src={item} alt='game image of list'/>
-        </div>
-      ))  }
-      </div>
-    </div>
-    
-  </>
-  )
+    </>
+  );
 };
 
 const SectionNews = () => (
@@ -163,7 +161,7 @@ const SectionNews = () => (
       ></CardNews>
       <div className="flex items-center">
         <div>
-          <PurpleButton  className="max-h-[48px]" onClick={() => {}}>
+          <PurpleButton className="max-h-[48px]" onClick={() => {}}>
             все новости
             <IconArrowRight />
           </PurpleButton>
@@ -173,25 +171,29 @@ const SectionNews = () => (
   </section>
 );
 
-
 const SectionContacts = () => (
   <section className="container mx-auto max-w-[1360px] px-5 pt-[60px] pb-[60px]">
-    <h3 className="font-heading text-[50px]">мы в соц. сетях</h3>
-      <div className="grid grid-cols-[324px_324px_324px_324px] gap-[24px]">
-        <CardSocial className="col-span-2 h-[244px]" title="присоединяйся в наш discord!">
-          <IconDiscord/>
-        </CardSocial>
-        <CardSocial className="row-span-2"   title="присоединяйся в наш twitch!">
-          <IconTwitch/>
-        </CardSocial>
-        <CardSocial className="row-span-2 "  title="присоединяйся в наш tg!">
-          <IconTelegram className="group-hover:fill-purpule"/>
-        </CardSocial>
-        <CardSocial className="col-span-2 h-[244px]"  title="присоединяйся
-в наш vk!">
-          <IconVk/>
-        </CardSocial>
-      </div>
+    <h3 className="font-heading text-[50px] mb-[40px]">мы в соц. сетях</h3>
+    <div className="grid grid-cols-news-grid gap-[24px]">
+      <CardSocial
+        className="col-span-2 h-[244px]"
+        title="присоединяйся в наш discord!"
+      >
+        <IconDiscord className="group-hover:fill-purpule" />
+      </CardSocial>
+      <CardSocial className="row-span-2" title="присоединяйся в наш twitch!">
+        <IconTwitch className="group-hover:fill-purpule" />
+      </CardSocial>
+      <CardSocial className="row-span-2 " title="присоединяйся в наш tg!">
+        <IconTelegram className="group-hover:fill-purpule" />
+      </CardSocial>
+      <CardSocial
+        className="col-span-2 h-[244px]"
+        title="присоединяйся в наш vk!"
+      >
+        <IconVk className="group-hover:fill-purpule" />
+      </CardSocial>
+    </div>
   </section>
 );
 
