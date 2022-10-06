@@ -6,16 +6,14 @@ interface Props {
 
 const CardSocial: React.FC<Props> = ({ children, title, className }) => {
   return (
-    <div
-      className={`${className} bg-[#333336] rounded-[10px] flex justify-between flex-wrap p-[32px] pt-[40px] group`}
-    >
+    <div className={`${className} bg-[#333336] rounded-[10px] p-8 pt-[40px] group grid`}>
+      {/* <div className={`${className} bg-[#333336] rounded-[10px] p-8 pt-[40px] group grid`}></div> */}
       <div>
         <div className="max-w-[258px] font-heading text-[24px] leading-[24px] group-hover:text-purpule">
-          {" "}
-          {title}{" "}
+          {title}
         </div>
       </div>
-      <div className="flex items-center justify-center group-hover:fill-purpule">
+      <div className="group-hover:fill-purpule">
         {children}
       </div>
     </div>

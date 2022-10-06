@@ -99,20 +99,21 @@ const SectionInfo = () => {
   return (
     <>
       <section className="container mx-auto max-w-[1360px] px-5 pt-[120px]">
-        <div className="flex items-center justify-between flex-wrap mb-[142px]">
-          <div className="flex-1 basis-1/2">
-            <div className="max-w-[536px] max-h-[416px] relative">
+        <div className="grid grid-cols-info-2 items-center justify-between flex-wrap mb-[142px] lg:gap-5 justify-between">
+          <div className="">
+            <div className="flex items-center justify-center xl:justify-start relative">
               <Image
                 src={logoPng}
                 width={536}
                 height={416}
+                
                 alt="logo"
                 objectFit="cover"
               />
             </div>
           </div>
-          <div className="w-[536px]">
-            <h3 className="font-heading text-[50px]">wild griffins</h3>
+          <div className="">
+            <h3 className="font-heading text-[50px] leading-[50px] mb-[40px] ">wild griffins</h3>
             <p className="font-text text-base indent-3">
               Мы киберспортивная организация на базе Санкт-Петербургского
               государственного экономического университета, направленная на
@@ -174,25 +175,30 @@ const SectionNews = () => (
 const SectionContacts = () => (
   <section className="container mx-auto max-w-[1360px] px-5 pt-[60px] pb-[60px]">
     <h3 className="font-heading text-[50px] mb-[40px]">мы в соц. сетях</h3>
-    <div className="grid grid-cols-news-grid gap-[24px]">
-      <CardSocial
-        className="col-span-2 h-[244px]"
-        title="присоединяйся в наш discord!"
-      >
-        <IconDiscord className="group-hover:fill-purpule" />
-      </CardSocial>
-      <CardSocial className="row-span-2" title="присоединяйся в наш twitch!">
-        <IconTwitch className="group-hover:fill-purpule" />
-      </CardSocial>
-      <CardSocial className="row-span-2 " title="присоединяйся в наш tg!">
-        <IconTelegram className="group-hover:fill-purpule" />
-      </CardSocial>
-      <CardSocial
-        className="col-span-2 h-[244px]"
-        title="присоединяйся в наш vk!"
-      >
-        <IconVk className="group-hover:fill-purpule" />
-      </CardSocial>
+    <div className="grid grid-cols-[minmax(648px,1fr)_minmax(0,1fr)] gap-6 ">
+      {/* <div className="basis-1/2 grid gap-6 grid-rows-2 "> */}
+      <div className="grid gap-6 grid-rows-2 ">
+        <CardSocial
+          className=""
+          title="присоединяйся в наш discord!">
+          <IconDiscord className="group-hover:fill-purpule" />
+        </CardSocial>
+        <CardSocial className="" title="присоединяйся в наш twitch!">
+          <IconTwitch className="group-hover:fill-purpule" />
+        </CardSocial>
+      </div>
+      {/* <div className="grid gap-6 grid-row-2  "> */}
+      <div className="basis-1/2 grid gap-6  2xl:grid-row-2 2xl:grid-cols-2">
+        <CardSocial className="" title="присоединяйся в наш tg!">
+          <IconTelegram className="group-hover:fill-purpule" />
+        </CardSocial>
+        <CardSocial
+          className=""
+          title="присоединяйся в наш vk!"
+        >
+          <IconVk className="group-hover:fill-purpule" />
+        </CardSocial>
+      </div>
     </div>
   </section>
 );
