@@ -6,11 +6,11 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1362px',
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1362px",
     },
     fontFamily: {
       heading: ["Batman Forever"],
@@ -20,7 +20,7 @@ module.exports = {
       gridTemplateColumns: {
         // "contacts-2": "repeat(auto-fit, minmax(49%,1fr))",
         "contacts-2": "minxmax(100px, 200px), minxmax(50px,1fr))",
-        "card-2": "repeat(auto-fill, minmax(220px, 1fr))",
+        "card-2": "1fr, 110px",
 
         "info-2": "repeat(auto-fit, minmax(536px, 1fr))",
         "main-4": "repeat(auto-fill, minmax(312px, 1fr))",
