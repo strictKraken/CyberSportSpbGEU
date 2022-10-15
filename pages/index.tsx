@@ -1,7 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 
+import React from "react";
+
 import MainLayout from "../layouts/MainLayout";
+
 // Icons
 import IconArrowRight from "../components/icons-svg/IconArrowRight";
 import IconDiscord from "../components/icons-svg/IconDiscord";
@@ -13,7 +16,6 @@ import testImg from "../public/images/1.png";
 import logoPng from "../public/images/LogoPng.png";
 
 // import Head from "next/head";
-
 import PurpleButton from "../components/buttons/PurpleButton";
 import CardNews from "../components/cards/CardNews";
 
