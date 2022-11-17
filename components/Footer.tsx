@@ -1,4 +1,4 @@
-import NavMenu, { Items } from "./NavMenu";
+import NavMenu, { Items } from "./navMenu/NavMenu";
 interface Props {
   navList: Items[];
 }

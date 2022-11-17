@@ -202,13 +202,13 @@ const SectionContacts = () => (
 
 const Home: NextPage = () => (
   <MainLayout>
-    <div className="min-h-screen bg-main-bg">
+    {/* <div className="min-h-screen bg-main-bg">
       <SectionCarusel />
       <SectionInfo />
       <SectionNews />
       <SectionContacts />
     </div>
-    <div className="h-[78px] w-full bg-gradient-to-b from-shadowFooter" />
+    <div className="h-[78px] w-full bg-gradient-to-b from-shadowFooter" /> */}
   </MainLayout>
 );
 

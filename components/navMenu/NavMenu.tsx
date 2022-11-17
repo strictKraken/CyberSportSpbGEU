@@ -1,4 +1,4 @@
-import LinkButton from "./navMenu/LinkButton";
+import LinkButton from "./LinkButton";
 
 export interface Items {
   name: string;

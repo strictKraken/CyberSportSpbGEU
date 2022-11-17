@@ -1,5 +1,5 @@
 import Link from "next/link";
-import NavMenu, { Items } from "./NavMenu";
+import NavMenu, { Items } from "./navMenu/NavMenu";
 
 type Props = {
   navList: Items[];

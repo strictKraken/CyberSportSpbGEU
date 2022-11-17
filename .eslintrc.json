@@ -1,9 +1,6 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "prettier"
-  ],
+  "extends": ["next/core-web-vitals", "prettier"],
   "rules": {
-      "prefer-const": "error"
+    "prefer-const": "error"
   }
 }
