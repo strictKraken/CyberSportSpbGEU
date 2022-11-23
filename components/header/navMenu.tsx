@@ -20,11 +20,11 @@ const NavMenu = ({ navList }: navList) => {
         <Burger />
       </div>
       <div
-        className={`absolute left-0 h-[100vh] bg-slate-500 w-full z-[-1] transition-all duration-500 ease ${
+        className={`absolute left-0 h-[100vh] bg-main-bg w-full z-[-1] transition-all duration-500 ease ${
           isOpen ? "top-0" : "top-[-100vh]"
         }`}
       >
-        <ul className="">
+        <ul className="flex flex-col items-center pt-[50%]">
           {navList.map((item) => (
             <LinkItem key={`link-${item.to}`} name={item.name} to={item.to} />
           ))}
@@ -35,7 +35,7 @@ const NavMenu = ({ navList }: navList) => {
 };
 
 const LinkItem = ({ name, to }) => (
-  <li className="font-batman">
+  <li className="font-batman text-[30px]">
     <Link
       href={to}
       className="hover:text-purpule transition-colors hover:ease-linearhover:text-purpule translate-colors hover:ease-linear"
