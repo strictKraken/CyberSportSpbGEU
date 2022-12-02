@@ -4,7 +4,11 @@ interface Props {
   className?: string;
 }
 
-const PurpleButton: React.FC<Props> = ({ children, onClick, className="" }) => {
+const PurpleButton: React.FC<Props> = ({
+  children,
+  onClick,
+  className = "",
+}) => {
   return (
     <button
       onClick={onClick}
