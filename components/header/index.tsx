@@ -23,7 +23,7 @@ const navList = [
   },
   {
     name: "сотрудничество",
-    to: "/contantc",
+    to: "/contact",
   },
   {
     name: "twitch",

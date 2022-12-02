@@ -18,7 +18,6 @@ module.exports = {
     },
     extend: {
       gridTemplateColumns: {
-        // "contacts-2": "repeat(auto-fit, minmax(49%,1fr))",
         "contacts-2": "minxmax(100px, 200px), minxmax(50px,1fr))",
         "card-2": "1fr, 110px",
 
