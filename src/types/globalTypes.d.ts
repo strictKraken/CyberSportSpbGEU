@@ -15,6 +15,13 @@ export type SlideData = {
 export type ShortNewsCard = {
   id: string;
   title: string;
-  date: string | Date;
+  date?: string;
   img: string | StaticImageData;
 };
+
+export interface CardSocialT {
+  children?: React.ReactNode;
+  title?: string;
+  icon?: React.ReactNode;
+  className?: string;
+}

@@ -1,6 +1,8 @@
+import { SlideData, ShortNewsCard } from "../../types/globalTypes";
+
+import testImageNews from "/public/images/1.png";
 import slideImg from "../../assets/testData/caruselExmpl.png";
 
-import { SlideData } from "../../types/globalTypes";
 export const SlidesData: SlideData[] = [
   {
     id: "1",
@@ -22,13 +24,12 @@ export const SlidesData: SlideData[] = [
   },
 ];
 
-import { ShortNewsCard } from "../../types/globalTypes";
-export const NewsData: ShortNewsCard[] = [
+export const getLastNews: ShortNewsCard[] = [
   {
     id: "1",
     title: "Ребрендинг",
     date: "Сентябрь 2022",
-    img: "",
+    img: testImageNews,
   },
   {
     id: "2",
@@ -40,6 +41,6 @@ export const NewsData: ShortNewsCard[] = [
     id: "3",
     title: "новый стаф",
     date: "Октябрь 2022",
-    img: "",
+    img: testImageNews,
   },
 ];

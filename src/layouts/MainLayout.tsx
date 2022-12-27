@@ -1,46 +1,17 @@
 import Header from "../components/header";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
+import { navLinks } from "../utils/headerData";
 
-interface Props {
+type Props = {
   children: React.ReactNode;
-}
-
-const navList = [
-  {
-    name: "главная",
-    link: "/",
-  },
-  {
-    name: "о нас",
-    link: "/about",
-  },
-  {
-    name: "ивенты",
-    link: "/ivents",
-  },
-  {
-    name: "команда",
-    link: "/teams",
-  },
-  {
-    name: "достижения",
-    link: "",
-  },
-  {
-    name: "сотрудничество",
-    link: "",
-  },
-  {
-    name: "twitch",
-    link: "/stream",
-  },
-];
+};
 
 const MainLayout: React.FC<Props> = ({ children }) => (
   <>
-    <Header navList={navList} />
+    {/* <Header navList={navLinks} /> */}
+    <Header />
     <main>{children}</main>
-    <Footer navList={navList} />
+    <Footer navList={navLinks} />
   </>
 );
 

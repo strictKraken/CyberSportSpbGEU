@@ -35,3 +35,9 @@ a {
     background: #1c1c1e;
   }
 }
+
+@layer components {
+  .section-title {
+    @apply font-heading text-[30px] lg:text-[50px];
+  }
+}

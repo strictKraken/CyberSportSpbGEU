@@ -13,7 +13,6 @@ import IconTelegram from "../components/icons-svg/IconTelegram";
 import IconVk from "../components/icons-svg/IconVk";
 
 import PurpleButton from "../components/buttons/BaseButton";
-// import CardNews from "../components/cards/CardNews";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -21,17 +20,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { imagesGames as listGames } from "../testData/staticData";
+
 export const getStaticProps: GetStaticProps = async () => {
   const news = [];
   return {
     props: {
-      news,
+      // news,
     },
   };
 };
 
 import { SlidesData } from "../testData/HomePage/HomePage";
-import { SlideData } from "../types/globalTypes";
+import { ShortNewsCard, SlideData } from "../types/globalTypes";
 
 const SectionCarusel = () => (
   <section className="">
@@ -64,7 +65,7 @@ const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
         />
       </div>
       <div className="container mx-auto max-w-[1360px] px-5 flex flex-col justify-center h-full">
-        <h2 className="font-heading text-[45px] leading-[40px] lg:text-[60px] max-w-[708px] lg:leading-[61px] mb-11">
+        <h2 className="font-heading text-dynamic leading-[40px] lg:text-[60px] max-w-[708px] lg:leading-[61px] mb-11">
           {title}
         </h2>
         <span className="font-text text-[20px] lg:text-[18px]">{subTitle}</span>
@@ -73,18 +74,24 @@ const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
   );
 };
 
-import miniDota from "/public/images/list-games/dota.png";
-import miniCS from "/public/images/list-games/cs.png";
-import miniHS from "/public/images/list-games/hearth-stone.png";
-import miniSC from "/public/images/list-games/star-craft.png";
-import CardSocial from "../components/cards/CardSocial";
+import InfinityLineBoard from "../components/caruselBoard/InfinityLineboard";
 
 const SectionInfo = () => {
-  const listGames = [miniDota, miniCS, miniHS, miniSC];
   return (
     <>
-      <section className="container mx-auto max-w-[1360px] px-5">
-        <div className="relative w-[280px] h-[240px] mx-auto">
+      <section
+        className="container mx-auto max-w-[1360px] px-5 
+        lg:flex lg:justify-between lg:self-start
+        lg:pt-[118px] lg:pb-[142px]
+      
+      "
+      >
+        <div
+          className="relative w-[280px] h-[240px] mx-auto 
+          lg:basis-1/2 lg:h-[416px] lg:max-w-[536px]
+          
+          "
+        >
           <Image
             src="/images/LogoPng.png"
             alt="logo"
@@ -92,7 +99,14 @@ const SectionInfo = () => {
             objectFit="cover"
           ></Image>
         </div>
-        <div>
+        <div className="lg:basis-1/2 lg:flex lg:flex-col lg:justify-center lg:self-center lg:max-w-[536px]">
+          <h3
+            className="section-title
+            lg:mb-[40px]
+          "
+          >
+            wild griffins
+          </h3>
           <p className="indent-3">
             Мы киберспортивная организация на базе Санкт-Петербургского
             государственного экономического университета, направленная на
@@ -105,70 +119,80 @@ const SectionInfo = () => {
           </p>
         </div>
       </section>
-      {/* <div className="container mx-auto max-w-[1360px]">
-        <div className="flex">
-          {listGames.map((item) => (
-            <div key={item.src}>
-              <Image src={item} alt="game image of list" />
-            </div>
-          ))}
-        </div>
-      </div> */}
+      <InfinityLineBoard slides={listGames} />
     </>
   );
 };
 
+import { getLastNews } from "../testData/HomePage/HomePage";
 const SectionNews = () => (
-  <section className="container mx-auto max-w-[1360px] px-5 pt-[120px]">
-    <h3 className="font-heading text-[50px] mb-[40px]">последние новости</h3>
-    <div className="grid grid-cols-main-4 gap-6">
-      {/* <CardNews
-        title="ребрендинг"
-        subTitle="Сентябрь 2022"
-        imageUrl={testImg}
-      ></CardNews> */}
-      {/* <CardNews
-        title="ребрендинг"
-        subTitle="Сентябрь 2022"
-        imageUrl={testImg}
-      ></CardNews> */}
-      {/* <CardNews
-        title="ребрендинг"
-        subTitle="Сентябрь 2022"
-        imageUrl={testImg}
-      ></CardNews> */}
-      <div className="flex items-center">
-        <div>
-          <PurpleButton className="max-h-[48px]" onClick={() => {}}>
-            все новости
-            <IconArrowRight />
-          </PurpleButton>
-        </div>
+  <section
+    className="container mx-auto max-w-[1360px] px-5 
+    lg:pt-[140px] lg:pb-[60px]
+    "
+  >
+    <h3
+      className="section-title
+      lg:mb-[40px]
+    "
+    >
+      последние новости
+    </h3>
+    <div
+      className="grid gap-6
+      md:grid-cols-news-grid-main
+      lg:items-center
+    "
+    >
+      {getLastNews.map((item: ShortNewsCard) => (
+        <CardNews
+          key={item.id}
+          title={item.title}
+          subTitle={item.date}
+          imageUrl={item.img}
+        ></CardNews>
+      ))}
+      <div className="">
+        <PurpleButton className="" onClick={() => {}}>
+          все новости
+          <IconArrowRight />
+        </PurpleButton>
       </div>
     </div>
   </section>
 );
 
+import CardNews from "../components/cards/CardNews";
+import VerticalCard from "../components/cards/cardSocial/verticalCard";
+import HorizontCard from "../components/cards/cardSocial/horizontCard";
 const SectionContacts = () => (
-  <section className="container mx-auto max-w-[1360px] px-5 pt-[60px] pb-[60px]">
-    <h3 className="font-heading text-[50px] mb-[40px]">мы в соц. сетях</h3>
-    <div className="grid grid-cols-[minmax(648px,1fr)_minmax(0,1fr)] gap-6 ">
-      {/* <div className="basis-1/2 grid gap-6 grid-rows-2 "> */}
-      <div className="grid gap-6 grid-rows-2 ">
-        <CardSocial className="" title="присоединяйся в наш discord!">
-          <IconDiscord className="group-hover:fill-purpule" />
-        </CardSocial>
-        <CardSocial className="" title="присоединяйся в наш twitch!">
-          <IconTwitch className="group-hover:fill-purpule" />
-        </CardSocial>
+  <section className="container mx-auto max-w-[1360px] px-5">
+    <h3
+      className="section-title
+      lg:mb-[40px]
+    "
+    >
+      мы в соц. сетях
+    </h3>
+    <div className="grid grid-cols-2 gap-4">
+      <div className="grid gap-4">
+        <HorizontCard
+          title="присоединяйся в наш discord!"
+          icon={<IconDiscord />}
+        />
+        <HorizontCard title="присоединяйся в наш vk!" icon={<IconVk />} />
       </div>
-      <div className="basis-1/2 grid gap-6  2xl:grid-row-2 2xl:grid-cols-2">
-        <CardSocial className="" title="присоединяйся в наш tg!">
-          <IconTelegram className="group-hover:fill-purpule" />
-        </CardSocial>
-        <CardSocial className="" title="присоединяйся в наш vk!">
-          <IconVk className="group-hover:fill-purpule" />
-        </CardSocial>
+
+      <div
+        className="grid gap-4
+        md:grid-cols-2
+      "
+      >
+        <VerticalCard
+          title="присоединяйся в наш twitch!"
+          icon={<IconTwitch />}
+        />
+        <VerticalCard title="присоединяйся в наш tg" icon={<IconTelegram />} />
       </div>
     </div>
   </section>
@@ -179,12 +203,7 @@ const Home: NextPage = () => (
     <SectionCarusel />
     <SectionInfo />
     <SectionNews />
-    {/* <div className="min-h-screen bg-main-bg">
-      
-      
-      <SectionContacts />
-    </div>
-    <div className="h-[78px] w-full bg-gradient-to-b from-shadowFooter" /> */}
+    <SectionContacts />
   </MainLayout>
 );
 

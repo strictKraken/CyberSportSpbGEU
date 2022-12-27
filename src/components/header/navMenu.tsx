@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { navLink } from "../../types/globalTypes";
+import { useScrollBlock } from "../../hooks/useScrollBlock";
 
 type Props = {
   navList: navLink[];
@@ -10,6 +11,12 @@ type Props = {
 
 const NavMenu = ({ navList }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
+
+  const onNavOpen = (isOpen: boolean) => {
+    setIsOpen(!isOpen);
+    !isOpen ? blockScroll() : allowScroll();
+  };
 
   return (
     <nav className="flex items-center xl:gap-[48px]">
@@ -39,10 +46,7 @@ const NavMenu = ({ navList }: Props) => {
           ))}
         </ul>
       </div>
-      <div
-        className="ml-auto xl:hidden z-20"
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <div className="ml-auto xl:hidden z-20" onClick={() => onNavOpen(isOpen)}>
         <Burger />
       </div>
     </nav>
