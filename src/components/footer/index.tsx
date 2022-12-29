@@ -8,6 +8,7 @@ import IconTwitch from "../icons-svg/IconTwitch";
 import IconDiscord from "../icons-svg/IconDiscord";
 import IconVk from "../icons-svg/IconVk";
 import IconTelegram from "../icons-svg/IconTelegram";
+import LogoFooter from "/public/icons/halfLogoFooter.svg";
 
 interface Props {
   navList: navLink[];
@@ -92,18 +93,30 @@ const Navigation = ({ navList }: Props) => {
 
 const Footer: React.FC<Props> = ({ navList }) => {
   return (
-    <footer className="w-full bg-main-bg pb-9 pt-[40px]">
-      <div className="container mx-auto max-w-[1360px] px-5">
-        <div className="flex flex-col gap-0">
-          <div className="order-3">
+    <footer className="w-full bg-main-bg overflow-hidden relative z-[1]">
+      <div className="container mx-auto max-w-[1360px] px-5  py-[70px]">
+        <div
+          className="flex flex-col gap-0 
+
+          sm:flex-row sm:gap-[45px] sm:flex-wrap
+        "
+        >
+          <div
+            className="order-3 self-center w-full 
+            lg:order-1 lg:self-start lg:mr-[140px] lg:max-w-[215px]
+          "
+          >
             <Info />
           </div>
           <nav className="order-1">
             <Navigation navList={navList} />
           </nav>
-          <div className="order-2 mb-10">
+          <div className="order-2 mb-10 basis-1/3 max-w-fit">
             <Contacts />
           </div>
+        </div>
+        <div className="right-0 bottom-0 -z-[1] hidden xl:block xl:absolute">
+          <Image src={LogoFooter} />
         </div>
       </div>
     </footer>

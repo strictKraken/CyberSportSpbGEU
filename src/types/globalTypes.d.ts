@@ -19,9 +19,15 @@ export type ShortNewsCard = {
   img: string | StaticImageData;
 };
 
+export type linkSocialT = {
+  name: string;
+  url: string;
+};
+
 export interface CardSocialT {
   children?: React.ReactNode;
   title?: string;
   icon?: React.ReactNode;
   className?: string;
+  url?: linkSocialT;
 }

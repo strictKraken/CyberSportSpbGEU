@@ -3,12 +3,20 @@ import Image from "next/image";
 
 import React from "react";
 
-import MainLayout from "../layouts/MainLayout";
-
 // Icons
+const IconTwitch = dynamic(() => import("../components/icons-svg/IconTwitch"), {
+  ssr: false,
+});
+const IconDiscord = dynamic(
+  () => import("../components/icons-svg/IconDiscord"),
+  {
+    ssr: false,
+  },
+);
+
 import IconArrowRight from "../components/icons-svg/IconArrowRight";
-import IconDiscord from "../components/icons-svg/IconDiscord";
-import IconTwitch from "../components/icons-svg/IconTwitch";
+// import IconDiscord from "../components/icons-svg/IconDiscord";
+// import IconTwitch from "../components/icons-svg/IconTwitch";
 import IconTelegram from "../components/icons-svg/IconTelegram";
 import IconVk from "../components/icons-svg/IconVk";
 
@@ -42,6 +50,7 @@ const SectionCarusel = () => (
         clickable: true,
       }}
       modules={[Pagination, Navigation]}
+      navigation={true}
     >
       {SlidesData.map((slide) => (
         <SwiperSlide key={slide.id}>
@@ -62,10 +71,11 @@ const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
           objectFit="cover"
           layout="fill"
           className="top-0"
+          priority
         />
       </div>
       <div className="container mx-auto max-w-[1360px] px-5 flex flex-col justify-center h-full">
-        <h2 className="font-heading text-dynamic leading-[40px] lg:text-[60px] max-w-[708px] lg:leading-[61px] mb-11">
+        <h2 className="font-heading text-dynamic leading-[102%] lg:text-[60px] max-w-[708px] mb-11">
           {title}
         </h2>
         <span className="font-text text-[20px] lg:text-[18px]">{subTitle}</span>
@@ -80,10 +90,10 @@ const SectionInfo = () => {
   return (
     <>
       <section
-        className="container mx-auto max-w-[1360px] px-5 
+        className="container mx-auto max-w-[1360px] px-5
+        py-[40px]
         lg:flex lg:justify-between lg:self-start
         lg:pt-[118px] lg:pb-[142px]
-      
       "
       >
         <div
@@ -102,6 +112,7 @@ const SectionInfo = () => {
         <div className="lg:basis-1/2 lg:flex lg:flex-col lg:justify-center lg:self-center lg:max-w-[536px]">
           <h3
             className="section-title
+            mb-1
             lg:mb-[40px]
           "
           >
@@ -128,11 +139,13 @@ import { getLastNews } from "../testData/HomePage/HomePage";
 const SectionNews = () => (
   <section
     className="container mx-auto max-w-[1360px] px-5 
+    py-[40px]
     lg:pt-[140px] lg:pb-[60px]
     "
   >
     <h3
       className="section-title
+      mb-5
       lg:mb-[40px]
     "
     >
@@ -165,17 +178,30 @@ const SectionNews = () => (
 import CardNews from "../components/cards/CardNews";
 import VerticalCard from "../components/cards/cardSocial/verticalCard";
 import HorizontCard from "../components/cards/cardSocial/horizontCard";
+import dynamic from "next/dynamic";
 const SectionContacts = () => (
   <section className="container mx-auto max-w-[1360px] px-5">
     <h3
       className="section-title
       lg:mb-[40px]
+      mb-5
     "
     >
       мы в соц. сетях
     </h3>
-    <div className="grid grid-cols-2 gap-4">
-      <div className="grid gap-4">
+    <div
+      className="grid grid-cols-2 grid-flow-col gap-4
+      sm:grid-cols-3
+      md:grid-cols-3
+      lg:grid-cols-2
+      "
+    >
+      <div
+        className="grid gap-4 
+        sm:col-span-2
+        lg:col-span-1
+        "
+      >
         <HorizontCard
           title="присоединяйся в наш discord!"
           icon={<IconDiscord />}
@@ -184,9 +210,10 @@ const SectionContacts = () => (
       </div>
 
       <div
-        className="grid gap-4
-        md:grid-cols-2
-      "
+        className="grid gap-4 
+        sm:col-span-3
+        lg:col-span-1 lg:grid-cols-2
+        "
       >
         <VerticalCard
           title="присоединяйся в наш twitch!"
@@ -199,12 +226,12 @@ const SectionContacts = () => (
 );
 
 const Home: NextPage = () => (
-  <MainLayout>
+  <>
     <SectionCarusel />
     <SectionInfo />
     <SectionNews />
     <SectionContacts />
-  </MainLayout>
+  </>
 );
 
 export default Home;

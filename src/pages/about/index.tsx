@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import MainLayout from "../../layouts/MainLayout";
 
 const Description = () => (
   <section>
@@ -32,11 +31,11 @@ const Description = () => (
 );
 
 const About: NextPage = () => (
-  <MainLayout>
+  <>
     <div className="h-screen bg-main-bg">
       <Description />
     </div>
-  </MainLayout>
+  </>
 );
 
 export default About;

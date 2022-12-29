@@ -4,7 +4,7 @@ type Props = {
 
 const Burger = () => {
   return (
-    <div className="">
+    <div className="cursor-pointer">
       <svg
         width="31"
         height="17"

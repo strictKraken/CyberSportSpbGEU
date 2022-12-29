@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SkeletBlockImage from "./skeletBlockImage";
 
 export interface ICardNews {
   title: string;
@@ -24,7 +25,7 @@ const CardNews: React.FC<ICardNews> = ({ title, subTitle, imageUrl }) => {
           objectPosition="center"
         />
       ) : (
-        <div className="bg-slate-500 absolute top-0 left-0 h-full w-full"></div>
+        <SkeletBlockImage className="absolute w-full h-full left-0 top-0" />
       )}
       <div className="relative px-[16px] py-[24px] bg-gradient-to-t from-[#1C1C1E]">
         <div className="font-batman text-[24px]"> {title} </div>

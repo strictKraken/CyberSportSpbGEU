@@ -1,16 +1,22 @@
 import { CardSocialT } from "../../../types/globalTypes";
 
-const VerticalCard: React.FC<CardSocialT> = ({ title, icon, className }) => {
+const VerticalCard: React.FC<CardSocialT> = ({
+  title,
+  icon,
+  className,
+  url,
+}) => {
   return (
+    // <a href={url?.url} target="_blank" rel="noreferrer">
     <div
-      className=" bg-[#333336] rounded-[10px] p-1 group flex flex-col h-full justify-center items-center
-    
-      md:pt-[40px] md:px-[26px] md:h-[400px]
-      lg:h-[512px] lg:pb-[62px]
+      className=" bg-dark-gray rounded-[10px] p-5 group flex flex-col h-full justify-center items-center group cursor-pointer
+      px-5
+      md:pt-[40px] md:px-[26px] 
+      lg:h-[512px] lg:pb-[62px] 
     "
     >
       <div
-        className="hidden text-[16px] font-heading
+        className="hidden text-[16px] font-heading group-hover:text-purpule
         lg:block
         xl:text-[24px]
         "
@@ -25,6 +31,7 @@ const VerticalCard: React.FC<CardSocialT> = ({ title, icon, className }) => {
         {icon}
       </div>
     </div>
+    // </a>
   );
 };
 

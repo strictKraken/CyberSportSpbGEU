@@ -1,7 +1,8 @@
-import Burger from "./burger";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
+import Burger from "./burger";
 import { navLink } from "../../types/globalTypes";
 import { useScrollBlock } from "../../hooks/useScrollBlock";
 
@@ -20,16 +21,21 @@ const NavMenu = ({ navList }: Props) => {
 
   return (
     <nav className="flex items-center xl:gap-[48px]">
-      <Link href="/" className="">
-        {/* refactoring */}
-        <Image
-          className="z-20"
-          src="/icons/logo.svg"
-          alt="logo"
-          width={60}
-          height={60}
-        />
-      </Link>
+      <div
+        className="relative w-[60px] h-[60px] cursor-pointer
+            md:w-[88px] md:h-[68px]
+            "
+      >
+        <Link href="/">
+          <Image
+            className="z-20"
+            src="/icons/logo.svg"
+            alt="logo"
+            layout="fill"
+          />
+        </Link>
+      </div>
+
       <div
         className={`absolute left-0 top-0 ${
           isOpen ? "opacity-100 block" : "opacity-0 hidden"
@@ -53,6 +59,19 @@ const NavMenu = ({ navList }: Props) => {
   );
 };
 
-const LinkItem = ({ name, path }: navLink) => <Link href={path}>{name}</Link>;
+const LinkItem = ({ name, path }: navLink) => {
+  const router = useRouter();
+  return (
+    <Link href={path}>
+      <span
+        className={`bg-clip-text cursor-pointer ${
+          router.pathname == path && "text-purpule"
+        }  `}
+      >
+        {name}
+      </span>
+    </Link>
+  );
+};
 
 export default NavMenu;

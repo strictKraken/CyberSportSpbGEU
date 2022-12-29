@@ -8,7 +8,6 @@ type Props = {
 
 const MainLayout: React.FC<Props> = ({ children }) => (
   <>
-    {/* <Header navList={navLinks} /> */}
     <Header />
     <main>{children}</main>
     <Footer navList={navLinks} />
