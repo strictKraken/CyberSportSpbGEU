@@ -1,6 +1,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { navLinks } from "../utils/headerData";
+import PageLayout from "./PageLayout";
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +10,9 @@ type Props = {
 const MainLayout: React.FC<Props> = ({ children }) => (
   <>
     <Header />
-    <main>{children}</main>
+    <PageLayout>
+      <main>{children}</main>
+    </PageLayout>
     <Footer navList={navLinks} />
   </>
 );
