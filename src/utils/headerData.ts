@@ -23,7 +23,7 @@ export const navLinks: navLink[] = [
   },
   {
     name: "сотрудничество",
-    path: "/contact",
+    path: "/contacts",
   },
   {
     name: "twitch",
