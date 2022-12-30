@@ -23,7 +23,7 @@ const TeamBlock = ({ title, members }) => {
       <h3>{title}</h3>
       <div>
         {members.map((item) => (
-          <></>
+          <>{title}</>
         ))}
       </div>
     </div>
