@@ -42,8 +42,8 @@ export type TeamMember = {
   status?: string;
 };
 
-export type Teams = {
+export type Team = {
   id: string;
-  nameTeam: string;
+  teamName: string;
   members: TeamMember[];
 };

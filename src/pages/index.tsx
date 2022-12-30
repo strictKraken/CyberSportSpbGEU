@@ -74,7 +74,7 @@ const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
           priority
         />
       </div>
-      <div className="container mx-auto max-w-[1360px] px-5 flex flex-col justify-center h-full">
+      <div className="container-base flex flex-col justify-center h-full">
         <h2 className="font-heading text-dynamic leading-[102%] lg:text-[60px] max-w-[708px] mb-11">
           {title}
         </h2>
@@ -90,7 +90,7 @@ const SectionInfo = () => {
   return (
     <>
       <section
-        className="container mx-auto max-w-[1360px] px-5
+        className="container-base
         py-[40px]
         lg:flex lg:justify-between lg:self-start
         lg:pt-[118px] lg:pb-[142px]
@@ -138,7 +138,7 @@ const SectionInfo = () => {
 import { getLastNews } from "../testData/HomePage/HomePage";
 const SectionNews = () => (
   <section
-    className="container mx-auto max-w-[1360px] px-5 
+    className="container-base 
     py-[40px]
     lg:pt-[140px] lg:pb-[60px]
     "
@@ -180,7 +180,7 @@ import VerticalCard from "../components/cards/cardSocial/verticalCard";
 import HorizontCard from "../components/cards/cardSocial/horizontCard";
 import dynamic from "next/dynamic";
 const SectionContacts = () => (
-  <section className="container mx-auto max-w-[1360px] px-5">
+  <section className="container-base">
     <h3
       className="section-title
       lg:mb-[40px]

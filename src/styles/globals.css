@@ -40,4 +40,7 @@ a {
   .section-title {
     @apply font-heading text-[30px] lg:text-[50px];
   }
+  .container-base {
+    @apply container mx-auto max-w-[1360px] px-5;
+  }
 }

@@ -7,14 +7,21 @@ const CardMemberTeam: React.FC<TeamMember> = ({ id, name, img, status }) => {
   };
 
   return (
-    <div onClick={() => onClickCard(id)} className="relative">
+    <div
+      onClick={() => onClickCard(id)}
+      className="relative bg-dark-gray rounded-[8px]"
+    >
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         {img ? <Image src={img} alt="" objectFit="cover"></Image> : <></>}
       </div>
       <div className="flex flex-col h-full justify-end">
-        <span className="block text-[20px] font-heading text-white text-center">
+        <h4
+          className="text-[20px] font-heading text-white text-center mb-2 
+          md:mb-4
+          "
+        >
           {name}
-        </span>
+        </h4>
         <span className="block text-center text-[15px]">{status}</span>
       </div>
     </div>
