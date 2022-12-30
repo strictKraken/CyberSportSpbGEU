@@ -1,13 +1,8 @@
 import type { NextPage } from "next";
-
-const Info = () => (
-  <section className="container px-[60px]">
-    <h1 className="font-heading text-3xl">Comming soon...</h1>
-  </section>
-);
+import Link from "next/link";
 
 const Join = () => {
-  <section className="container mx-auto max-w-[1360px] px-5">
+  <section className="container-base">
     <h2>присоединяйся</h2>
     <div></div>
   </section>;
@@ -15,10 +10,21 @@ const Join = () => {
 
 const TeamsBlock = () => {
   return (
-    <section className="container mx-auto max-w-[1360px] px-5">
+    <section className="container-base">
       <h3 className="font-heading text-[50px]">Наши команды</h3>
       <div>
-        <div></div>
+        <div>
+          <Link href={"/teams/dota"}>dota 2</Link>
+        </div>
+        <div>
+          <Link href={"/teams/cs"}>cs go</Link>
+        </div>
+        <div>
+          <Link href={"/teams/hs"}>hs</Link>
+        </div>
+        <div>
+          <Link href={"/teams/sc"}>sc 2</Link>
+        </div>
       </div>
     </section>
   );
