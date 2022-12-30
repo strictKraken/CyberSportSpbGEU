@@ -43,7 +43,12 @@ const SectionCollaboration = () => {
           </div>
         </div>
         <div className="order-1 md:order-2">
-          <Image src={"/images/collaboration.png"} width={484} height={400} />
+          <Image
+            src={"/images/collaboration.png"}
+            width={484}
+            height={400}
+            alt=""
+          />
         </div>
       </div>
     </section>
@@ -52,7 +57,7 @@ const SectionCollaboration = () => {
 
 const Contacts: NextPage = () => (
   <>
-    <div className="min-h-screen pt-[86px] md:pt-[116px]">
+    <div className="min-h-screen container mx-auto max-w-[1360px] px-5">
       <SectionCollaboration />
     </div>
   </>

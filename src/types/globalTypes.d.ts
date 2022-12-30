@@ -31,3 +31,19 @@ export interface CardSocialT {
   className?: string;
   url?: linkSocialT;
 }
+
+export type TeamMember = {
+  id: string;
+  name: string;
+  trainer?: string;
+  social?: string;
+  text?: string;
+  img?: string | StaticImageData;
+  status?: string;
+};
+
+export type Teams = {
+  id: string;
+  nameTeam: string;
+  members: TeamMember[];
+};

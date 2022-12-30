@@ -14,18 +14,20 @@ const Join = () => {
 };
 
 const TeamsBlock = () => {
-  <section className="container mx-auto max-w-[1360px] px-5">
-    <h3 className="font-heading text-[50px]">Наши команды</h3>
-    <div>
-      <div></div>
-    </div>
-  </section>;
+  return (
+    <section className="container mx-auto max-w-[1360px] px-5">
+      <h3 className="font-heading text-[50px]">Наши команды</h3>
+      <div>
+        <div></div>
+      </div>
+    </section>
+  );
 };
 
 const Teams: NextPage = () => (
   <>
     <div className="min-h-screen bg-main-bg">
-      <Info />
+      <TeamsBlock />
     </div>
   </>
 );
