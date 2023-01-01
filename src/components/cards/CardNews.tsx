@@ -11,7 +11,7 @@ const CardNews: React.FC<ICardNews> = ({ title, subTitle, imageUrl }) => {
   return (
     // max-w-[312px] h-[426px]
     <div
-      className="relative cursor-pointer  flex flex-col justify-end 
+      className="relative cursor-pointer flex flex-col justify-end 
       md:h-[426px]
     "
     >
