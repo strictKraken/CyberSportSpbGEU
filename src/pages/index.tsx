@@ -180,7 +180,7 @@ import VerticalCard from "../components/cards/cardSocial/verticalCard";
 import HorizontCard from "../components/cards/cardSocial/horizontCard";
 import dynamic from "next/dynamic";
 const SectionContacts = () => (
-  <section className="container-base">
+  <section className="container-base pb-[60px]">
     <h3
       className="section-title
       lg:mb-[40px]
