@@ -94,7 +94,7 @@ const Navigation = ({ navList }: Props) => {
 const Footer: React.FC<Props> = ({ navList }) => {
   return (
     <footer className="w-full bg-main-bg overflow-hidden relative z-[1]">
-      <div className="container mx-auto max-w-[1360px] px-5  py-[70px]">
+      <div className="container mx-auto max-w-[1360px] px-5  pb-[70px]">
         <div
           className="flex flex-col gap-0 
 
@@ -116,7 +116,7 @@ const Footer: React.FC<Props> = ({ navList }) => {
           </div>
         </div>
         <div className="right-0 bottom-0 -z-[1] hidden xl:block xl:absolute">
-          <Image src={LogoFooter} />
+          <Image src={LogoFooter} alt="" />
         </div>
       </div>
     </footer>

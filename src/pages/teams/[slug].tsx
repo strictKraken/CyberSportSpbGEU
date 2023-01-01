@@ -36,7 +36,7 @@ const TeamBlock: React.FC<Team> = ({ teamName, members }) => {
       </h3>
       <div className="">
         {members.map((item) => (
-          <CardMemberTeam key={item.id} {...item} />
+          <CardMemberTeam key={item.id} {...item} className="mb-4 md:mb-0" />
         ))}
       </div>
     </div>
@@ -77,7 +77,7 @@ interface Props {
 }
 const TeamPage: NextPage<Props> = ({ teams }) => {
   return (
-    <div className="h-screen pt-[116px]">
+    <div className=" pt-[116px]">
       <SectionTitle />
       <SectionTeams teams={teams} />
     </div>
