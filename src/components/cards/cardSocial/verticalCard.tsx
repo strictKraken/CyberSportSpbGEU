@@ -1,14 +1,21 @@
+import { useRouter } from "next/router";
 import { CardSocialT } from "../../../types/globalTypes";
 
 const VerticalCard: React.FC<CardSocialT> = ({
   title,
   icon,
   className,
-  url,
+  url = "",
 }) => {
+  const router = useRouter();
+
+  const redirect = (url: string) => {
+    if (!url || url === "") return;
+    window.open(url, "_blank");
+  };
   return (
-    // <a href={url?.url} target="_blank" rel="noreferrer">
     <div
+      onClick={() => redirect(url)}
       className=" bg-dark-gray rounded-[10px] p-5 group flex flex-col h-full justify-center items-center group cursor-pointer
       px-5
       md:pt-[40px] md:px-[26px] 
@@ -31,7 +38,6 @@ const VerticalCard: React.FC<CardSocialT> = ({
         {icon}
       </div>
     </div>
-    // </a>
   );
 };
 

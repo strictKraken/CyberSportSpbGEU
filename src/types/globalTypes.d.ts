@@ -29,7 +29,8 @@ export interface CardSocialT {
   title?: string;
   icon?: React.ReactNode;
   className?: string;
-  url?: linkSocialT;
+  // linkSocialT |
+  url?: string;
 }
 
 export type TeamMember = {

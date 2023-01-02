@@ -205,8 +205,13 @@ const SectionContacts = () => (
         <HorizontCard
           title="присоединяйся в наш discord!"
           icon={<IconDiscord />}
+          url="/contacts/discrod"
         />
-        <HorizontCard title="присоединяйся в наш vk!" icon={<IconVk />} />
+        <HorizontCard
+          title="присоединяйся в наш vk!"
+          icon={<IconVk />}
+          url="/contacts/vk"
+        />
       </div>
 
       <div
@@ -218,6 +223,7 @@ const SectionContacts = () => (
         <VerticalCard
           title="присоединяйся в наш twitch!"
           icon={<IconTwitch />}
+          url="/contacts/twitch"
         />
         <VerticalCard title="присоединяйся в наш tg" icon={<IconTelegram />} />
       </div>
