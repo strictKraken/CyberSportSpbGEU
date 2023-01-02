@@ -20,6 +20,7 @@ module.exports = {
     },
     fontSize: {
       dynamic: "clamp(2rem, 10vw, 60px)",
+      titleBigDynamic: "clamp(1rem, 6vw, 90px)",
     },
     extend: {
       gridTemplateColumns: {

@@ -77,7 +77,7 @@ interface Props {
 }
 const TeamPage: NextPage<Props> = ({ teams }) => {
   return (
-    <div className=" pt-[116px]">
+    <div className="">
       <SectionTitle />
       <SectionTeams teams={teams} />
     </div>

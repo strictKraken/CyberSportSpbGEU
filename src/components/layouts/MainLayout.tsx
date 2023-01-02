@@ -1,6 +1,6 @@
-import Header from "../components/header";
-import Footer from "../components/footer";
-import { navLinks } from "../utils/headerData";
+import Header from "../header";
+import Footer from "../footer";
+import { navLinks } from "../../utils/headerData";
 import PageLayout from "./PageLayout";
 
 type Props = {

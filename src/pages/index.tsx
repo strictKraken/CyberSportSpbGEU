@@ -180,7 +180,7 @@ import VerticalCard from "../components/cards/cardSocial/verticalCard";
 import HorizontCard from "../components/cards/cardSocial/horizontCard";
 import dynamic from "next/dynamic";
 const SectionContacts = () => (
-  <section className="container-base">
+  <section className="container-base pb-[60px]">
     <h3
       className="section-title
       lg:mb-[40px]
@@ -205,8 +205,13 @@ const SectionContacts = () => (
         <HorizontCard
           title="присоединяйся в наш discord!"
           icon={<IconDiscord />}
+          url="/contacts/discrod"
         />
-        <HorizontCard title="присоединяйся в наш vk!" icon={<IconVk />} />
+        <HorizontCard
+          title="присоединяйся в наш vk!"
+          icon={<IconVk />}
+          url="/contacts/vk"
+        />
       </div>
 
       <div
@@ -218,6 +223,7 @@ const SectionContacts = () => (
         <VerticalCard
           title="присоединяйся в наш twitch!"
           icon={<IconTwitch />}
+          url="/contacts/twitch"
         />
         <VerticalCard title="присоединяйся в наш tg" icon={<IconTelegram />} />
       </div>

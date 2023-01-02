@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import PageLayout from "../../layouts/PageLayout";
+import PageLayout from "../../components/layouts/PageLayout";
 
 const Info = () => (
   <section className="container px-[60px]">
