@@ -58,7 +58,11 @@ const Description = () => (
 
 const OurTeams = () => {
   return (
-    <section className="container-base pb-[32px]">
+    <section
+      className="container-base pb-[32px]
+              md:pb-[60px]
+            "
+    >
       {/* mobile view */}
       <div className="md:hidden">
         <h3 className="font-heading text-[16px] mb-[24px]">
@@ -113,25 +117,46 @@ const OurTeams = () => {
 
 const HistoryOfClub = () => {
   return (
-    <div className="mb-[64px]">
+    <div
+      className="py-[32px]
+      md:py-[60px]
+    "
+    >
       <section className="container-base">
-        <h3 className="font-heading text-[18px] leading-[1em] mb-[24px]">
+        <h3
+          className="font-heading text-[18px] leading-[1em] mb-[24px]
+          md:text-[24px] md:mb-[40px]
+          "
+        >
           История клуба развития киберспорта
         </h3>
-        <h2 className="font-heading text-[28px] leading-[1em] mb-8">
-          От простого клуба до организации Wild Griffins
+        <h2
+          className="font-heading text-[28px] leading-[1em] mb-8
+          md:text-[50px] md:mb-[60px]
+        "
+        >
+          От простого клуба<br></br> до организации Wild Griffins
         </h2>
-        <p className="font-text leading-6">
-          Клуб образовался ещё в далеком 2019 году. На тот момент межвузовский
-          киберспорт только зарождался в нашей стране и мы не стали исключением.
-          Объединение инициативных студентов, которым нравилось играть в
-          различные игры положило начало данной истории. В это время в Вузе
-          только начиналась популяризация киберспорта и особых достижений
-          достичь не удалось. Однако уже через год, с приходом новых студентов
-          появилась возможность образования сильного состава по игре Valorant.
-          Их победа на «Red Bull Campus Clutch» положила начало дальнейшим
-          достижениям наших ребят.
-        </p>
+        <div className="md:flex">
+          <p className="font-text leading-6">
+            Клуб образовался ещё в далеком 2019 году. На тот момент межвузовский
+            киберспорт только зарождался в нашей стране и мы не стали
+            исключением. Объединение инициативных студентов, которым нравилось
+            играть в различные игры положило начало данной истории. В это время
+            в Вузе только начиналась популяризация киберспорта и особых
+            достижений достичь не удалось. Однако уже через год, с приходом
+            новых студентов появилась возможность образования сильного состава
+            по игре Valorant. Их победа на «Red Bull Campus Clutch» положила
+            начало дальнейшим достижениям наших ребят.
+          </p>
+          <div
+            className="hidded 
+          md:block
+          "
+          >
+            <></>
+          </div>
+        </div>
       </section>
       <div></div>
     </div>
@@ -141,11 +166,20 @@ const HistoryOfClub = () => {
 const Additionals = () => {
   return (
     <div className="">
-      <section className="container-base pb-16">
-        <h2 className="font-heading text-[28px] leading-[1em] mb-8">
+      <section
+        className="container-base py-[32px]
+        md:py-[60px]
+      
+      "
+      >
+        <h2
+          className="font-heading text-[28px] leading-[1em] mb-8
+          md:text-[50px] md:mb-[60px]
+        "
+        >
           Сложные времена
         </h2>
-        <p>
+        <p className="md:max-w-[536px]">
           Период карантина затронул всех и каждого, так и межвузовский
           киберспорт не остался в стороне. В 2020-2021 годах клуб проживал
           стадию забвения. Крупных достижений в это время показать не удалось,
@@ -155,8 +189,15 @@ const Additionals = () => {
 
       <LabelScroll />
 
-      <section className="container-base  pb-16">
-        <h2 className="font-heading text-[28px] leading-[1em] mb-8">
+      <section
+        className="container-base py-[32px]
+        md:py-[60px]"
+      >
+        <h2
+          className="font-heading text-[28px] leading-[1em] mb-8
+          md:text-[50px] md:mb-[60px]
+        "
+        >
           Реорганизация
         </h2>
         <p>

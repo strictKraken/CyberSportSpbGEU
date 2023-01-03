@@ -10,6 +10,8 @@ import IconVk from "../icons-svg/IconVk";
 import IconTelegram from "../icons-svg/IconTelegram";
 import LogoFooter from "/public/icons/halfLogoFooter.svg";
 
+import { socialLinks } from "../../utils/contactLink";
+
 interface Props {
   navList: navLink[];
 }
@@ -50,16 +52,44 @@ const Contacts = ({}) => {
       <SpoilerBlock isShow={isOpenContacts}>
         <div className="grid grid-cols-2 gap-5">
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
-            <IconTwitch />
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href={socialLinks[0].url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconTwitch />
+            </a>
           </div>
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
-            <IconDiscord />
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href=""
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconDiscord />
+            </a>
           </div>
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
-            <IconVk />
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href=""
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconVk />
+            </a>
           </div>
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
-            <IconTelegram />
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href=""
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconTelegram />
+            </a>
           </div>
         </div>
       </SpoilerBlock>
@@ -97,7 +127,7 @@ const Footer: React.FC<Props> = ({ navList }) => {
       <div className="relative h-full">
         <div className="container mx-auto max-w-[1360px] px-5 pb-[70px]">
           <div
-            className="flex flex-col gap-0 
+            className="flex flex-col gap-0
             sm:flex-row sm:gap-[45px] sm:flex-wrap
             "
           >
