@@ -80,9 +80,32 @@ const OurTeams = () => {
           </ul>
         </div>
       </div>
+
       {/* desctop view */}
       <div className="hidden md:block">
-        <div className="grid"></div>
+        <div className="grid grid-cols-4">
+          {Teams.map((item) => (
+            <div key={item.name} className="relative">
+              <Image
+                src={item.imageDesktop}
+                width="330"
+                height="330"
+                objectFit="cover"
+                alt=""
+              />
+            </div>
+          ))}
+          <div className="col-span-2 py-[18px] px-6">
+            <h3 className="font-heading text-[16px] leading-[1em] mb-6">
+              сборные ВУЗа по дисциплинам
+            </h3>
+            <ul className="font-heading text-[16px] leading-[1em] flex flex-col justify-between gap-[0.5em]">
+              {Teams.map((item) => (
+                <div key={item.name}>{item.name}</div>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -129,6 +152,9 @@ const Additionals = () => {
           но оставались победы на небольших онлайн турнирах.
         </p>
       </section>
+
+      <LabelScroll />
+
       <section className="container-base  pb-16">
         <h2 className="font-heading text-[28px] leading-[1em] mb-8">
           Реорганизация
@@ -148,19 +174,60 @@ const Additionals = () => {
   );
 };
 
+const LabelScroll = () => {
+  return (
+    <div className="hidden md:block relative h-[50px] overflow-hidden">
+      <div className="w-[200%] flex items-center gap-[1em] absolute top-0 h-full animate-scrollLine">
+        <span className="section-title block text-purpule whitespace-nowrap">
+          Двигаем киберспорт СПБГЭУ в топы
+        </span>
+        <span className="section-title block text-purpule whitespace-nowrap">
+          Двигаем киберспорт СПБГЭУ в топы
+        </span>
+        <span className="section-title block text-purpule whitespace-nowrap">
+          Двигаем киберспорт СПБГЭУ в топы
+        </span>
+      </div>
+    </div>
+  );
+};
+
 const JoinUs = () => {
   return (
-    <section className="container-base py-8 bg-white">
-      <h2 className="font-heading text-[28px] leading-[1em] mb-[24px] text-main-bg">
-        Присоединяйся к нашей команде
-      </h2>
-      <p className="text-main-bg mb-8">
-        Мы победители кубка главы администрации невского района по Dota 2
-        Победители межвузовского турнира “CyberGuGa” Призеры СКЛ Неоднократные
-        Победители в турнирах от “Epulze” и “Challangermode” Победители
-        квалификаций “Red Bull Campus Clutch” по Valorant
-      </p>
-      <PurpleButton>Стать участником</PurpleButton>
+    <section
+      className="py-8 bg-white
+      md:py-[60px]
+    "
+    >
+      <div
+        className="container-base 
+        md:grid md:grid-cols-2 md:gap-x-10
+      "
+      >
+        <h2
+          className="section-title leading-[1em] mb-[24px] text-main-bg
+          order-2 md:mb-[40px]
+        "
+        >
+          Присоединяйся к нашей команде
+        </h2>
+        <div className="md:row-span-2">
+          <p className="text-main-bg">
+            Мы победители кубка главы администрации невского района по Dota 2
+          </p>
+          <p className="text-main-bg">
+            Победители межвузовского турнира “CyberGuGa” Призеры СКЛ
+            Неоднократные
+          </p>
+          <p className="text-main-bg">
+            Победители в турнирах от “Epulze” и “Challangermode” Победители
+            квалификаций “Red Bull Campus Clutch” по Valorant
+          </p>
+        </div>
+        <PurpleButton className="order-2 md:max-w-[275px]">
+          Стать участником
+        </PurpleButton>
+      </div>
     </section>
   );
 };
