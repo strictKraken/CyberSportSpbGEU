@@ -10,7 +10,7 @@ export const navLinks: navLink[] = [
     path: "/about",
   },
   {
-    name: "ивенты",
+    name: "новости",
     path: "/ivents",
   },
   {
@@ -19,7 +19,7 @@ export const navLinks: navLink[] = [
   },
   {
     name: "достижения",
-    path: "/achivments",
+    path: "/achievements",
   },
   {
     name: "сотрудничество",

@@ -10,6 +10,8 @@ import IconVk from "../icons-svg/IconVk";
 import IconTelegram from "../icons-svg/IconTelegram";
 import LogoFooter from "/public/icons/halfLogoFooter.svg";
 
+import { socialLinks } from "../../utils/contactLink";
+
 interface Props {
   navList: navLink[];
 }
@@ -49,17 +51,45 @@ const Contacts = ({}) => {
       </h5>
       <SpoilerBlock isShow={isOpenContacts}>
         <div className="grid grid-cols-2 gap-5">
-          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px]">
-            <IconTwitch />
+          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href={socialLinks[0].url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconTwitch />
+            </a>
           </div>
-          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px]">
-            <IconDiscord />
+          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href=""
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconDiscord />
+            </a>
           </div>
-          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px]">
-            <IconVk />
+          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href=""
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconVk />
+            </a>
           </div>
-          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px]">
-            <IconTelegram />
+          <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
+            <a
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              href=""
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconTelegram />
+            </a>
           </div>
         </div>
       </SpoilerBlock>
@@ -94,18 +124,17 @@ const Navigation = ({ navList }: Props) => {
 const Footer: React.FC<Props> = ({ navList }) => {
   return (
     <footer className="w-full bg-main-bg overflow-hidden bottom-0 z-[-1] fixed h-[372px]">
-      <div className="relative z-[1]">
-        <div className="container mx-auto max-w-[1360px] px-5  pb-[70px]">
+      <div className="relative h-full">
+        <div className="container mx-auto max-w-[1360px] px-5 pb-[70px]">
           <div
-            className="flex flex-col gap-0 
-
-          sm:flex-row sm:gap-[45px] sm:flex-wrap
-        "
+            className="flex flex-col gap-0
+            sm:flex-row sm:gap-[45px] sm:flex-wrap
+            "
           >
             <div
               className="order-3 self-center w-full 
-            lg:order-1 lg:self-start lg:mr-[140px] lg:max-w-[215px]
-          "
+              lg:order-1 lg:self-start lg:mr-[140px] lg:max-w-[215px]
+              "
             >
               <Info />
             </div>
