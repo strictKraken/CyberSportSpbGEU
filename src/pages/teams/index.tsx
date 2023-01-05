@@ -21,7 +21,12 @@ const Join = () => {
         <div></div>
       </div>
       <div>
-        <h2 className="section-title text-titleBigDynamic">побеждай</h2>
+        <h2
+          className="section-title text-titleBigDynamic relative max-w-max
+          after:content-[''] after:w-full after:h-[8px] after:bg-white after:absolute after:bottom-0 after:left-0"
+        >
+          побеждай
+        </h2>
         <div></div>
       </div>
       <div>
