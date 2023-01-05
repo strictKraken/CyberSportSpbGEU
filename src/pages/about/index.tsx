@@ -223,48 +223,56 @@ const Additionals = () => {
       </section>
 
       <LabelScroll />
-
       <section
         className="container-base py-[32px]
-        md:py-[60px]"
+        md:py-[60px]
+        lg:flex
+        "
       >
-        <h2
-          className="font-heading text-[28px] leading-[1em] mb-8
+        <div className="lg:basis-1/2">
+          <h2
+            className="font-heading text-[28px] leading-[1em] mb-8
           md:text-[50px] md:mb-[60px]
         "
+          >
+            Реорганизация
+          </h2>
+          <p>
+            2022 год стал ключевым в истории клуба. Новое руководство, выбранное
+            на основании выборов участников студенческого совета, решает дать
+            клубу новую жизнь. Меняется логотип, появляется уже узнаваемое
+            многими название “Wild Griffins”, появляется сайт и активно
+            развивается медийная структура организации. Этот новый этап дарит
+            нам неоднократные победы на всевозможных турнирах Санкт-Петербурга и
+            Российской Федерации. И это только начало!
+          </p>
+        </div>
+
+        <div
+          className="py-[32px] flex items-center justify-center
+          lg:ml-auto
+          "
         >
-          Реорганизация
-        </h2>
-        <p>
-          2022 год стал ключевым в истории клуба. Новое руководство, выбранное
-          на основании выборов участников студенческого совета, решает дать
-          клубу новую жизнь. Меняется логотип, появляется уже узнаваемое многими
-          название “Wild Griffins”, появляется сайт и активно развивается
-          медийная структура организации. Этот новый этап дарит нам
-          неоднократные победы на всевозможных турнирах Санкт-Петербурга и
-          Российской Федерации. И это только начало!
-        </p>
-      </section>
-      <div className="py-[32px] flex items-center justify-center">
-        <div className="relative w-[375px]">
-          <div className="absolute top-0 right-0">
-            <Image
-              src={"/images/about/rectangle.png"}
-              width={154}
-              height={154}
-              alt=""
-            />
-          </div>
-          <div className="[&>span]:align-bottom">
-            <Image
-              src={"/images/about/logoPolygon.png"}
-              alt=""
-              width={249}
-              height={250}
-            />
+          <div className="relative w-[375px]">
+            <div className="absolute top-0 right-0">
+              <Image
+                src={"/images/about/rectangle.png"}
+                width={154}
+                height={154}
+                alt=""
+              />
+            </div>
+            <div className="[&>span]:align-bottom">
+              <Image
+                src={"/images/about/logoPolygon.png"}
+                alt=""
+                width={249}
+                height={250}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
