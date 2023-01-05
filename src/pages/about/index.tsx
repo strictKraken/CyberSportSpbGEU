@@ -89,7 +89,7 @@ const OurTeams = () => {
       <div className="hidden md:block">
         <div className="grid grid-cols-4">
           {Teams.map((item) => (
-            <div key={item.name} className="relative">
+            <div key={item.name} className="relative [&>span]:align-bottom">
               <Image
                 src={item.imageDesktop}
                 width="330"
@@ -122,39 +122,74 @@ const HistoryOfClub = () => {
       md:py-[60px]
     "
     >
-      <section className="container-base">
-        <h3
-          className="font-heading text-[18px] leading-[1em] mb-[24px]
+      <section className="lg:container-base">
+        <div className="container-base lg:px-0">
+          <h3
+            className="font-heading text-[18px] leading-[1em] mb-[24px]
           md:text-[24px] md:mb-[40px]
           "
-        >
-          История клуба развития киберспорта
-        </h3>
-        <h2
-          className="font-heading text-[28px] leading-[1em] mb-8
+          >
+            История клуба развития киберспорта
+          </h3>
+          <h2
+            className="font-heading text-[28px] leading-[1em] mb-8
           md:text-[50px] md:mb-[60px]
         "
-        >
-          От простого клуба<br></br> до организации Wild Griffins
-        </h2>
-        <div className="md:flex">
-          <p className="font-text leading-6">
-            Клуб образовался ещё в далеком 2019 году. На тот момент межвузовский
-            киберспорт только зарождался в нашей стране и мы не стали
-            исключением. Объединение инициативных студентов, которым нравилось
-            играть в различные игры положило начало данной истории. В это время
-            в Вузе только начиналась популяризация киберспорта и особых
-            достижений достичь не удалось. Однако уже через год, с приходом
-            новых студентов появилась возможность образования сильного состава
-            по игре Valorant. Их победа на «Red Bull Campus Clutch» положила
-            начало дальнейшим достижениям наших ребят.
-          </p>
+          >
+            От простого клуба<br></br> до организации Wild Griffins
+          </h2>
+        </div>
+
+        <div className="md:flex md:gap-10">
+          <div className="container-base md:max-w-none md:mx-0 lg:px-0 basis-1/2 ">
+            <p className="font-text leading-6 mb-[32px] lg:mb-0">
+              Клуб образовался ещё в далеком 2019 году. На тот момент
+              межвузовский киберспорт только зарождался в нашей стране и мы не
+              стали исключением. Объединение инициативных студентов, которым
+              нравилось играть в различные игры положило начало данной истории.
+              В это время в Вузе только начиналась популяризация киберспорта и
+              особых достижений достичь не удалось. Однако уже через год, с
+              приходом новых студентов появилась возможность образования
+              сильного состава по игре Valorant. Их победа на «Red Bull Campus
+              Clutch» положила начало дальнейшим достижениям наших ребят.
+            </p>
+          </div>
+
           <div
-            className="hidded 
-          md:block
+            className="pt-[24px] bg-purpule ml-auto
+            lg:bg-main-bg lg:pt-0
           "
           >
-            <></>
+            <div
+              className="relative 
+              lg:pl-10 lg:pb-10"
+            >
+              <div
+                className="font-heading 
+                  lg:block lg:w-[500px] lg:h-[500px] lg:bg-purpule lg:rounded-[50%]
+              "
+              >
+                <ul className="mb-[24px] [&>li]:mb-3 [&>li]:text-white [&>li]:text-center lg:pt-[10%]">
+                  <li>Владимир "NyRX" Блинов</li>
+                  <li>Матвей "notasport" Лажа</li>
+                  <li>Айк "hayk1k" Алавердян</li>
+                  <li>Алексей "RentG3n" Калинкин</li>
+                  <li>Данил "Kira" Зенков</li>
+                </ul>
+              </div>
+              <div
+                className="[&>span]:align-bottom flex items-center justify-center
+                lg:absolute lg:bottom-0 lg:left-0
+              "
+              >
+                <Image
+                  src={"/images/about/contentImage-1.png"}
+                  width={403}
+                  height={276}
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -207,10 +242,29 @@ const Additionals = () => {
           название “Wild Griffins”, появляется сайт и активно развивается
           медийная структура организации. Этот новый этап дарит нам
           неоднократные победы на всевозможных турнирах Санкт-Петербурга и
-          Российской Федерации. И это только начало!{" "}
+          Российской Федерации. И это только начало!
         </p>
       </section>
-      <div>{/* <Image></Image> */}</div>
+      <div className="py-[32px] flex items-center justify-center">
+        <div className="relative w-[375px]">
+          <div className="absolute top-0 right-0">
+            <Image
+              src={"/images/about/rectangle.png"}
+              width={154}
+              height={154}
+              alt=""
+            />
+          </div>
+          <div className="[&>span]:align-bottom">
+            <Image
+              src={"/images/about/logoPolygon.png"}
+              alt=""
+              width={249}
+              height={250}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -252,7 +306,11 @@ const JoinUs = () => {
         >
           Присоединяйся к нашей команде
         </h2>
-        <div className="md:row-span-2">
+        <div
+          className="md:row-span-2 mb-[32px]
+          md:mb-0
+        "
+        >
           <p className="text-main-bg">
             Мы победители кубка главы администрации невского района по Dota 2
           </p>
@@ -265,7 +323,7 @@ const JoinUs = () => {
             квалификаций “Red Bull Campus Clutch” по Valorant
           </p>
         </div>
-        <PurpleButton className="order-2 md:max-w-[275px]">
+        <PurpleButton className="order-2 md:max-w-[275px] hover:text-purple-dark hover:font-semibold">
           Стать участником
         </PurpleButton>
       </div>
