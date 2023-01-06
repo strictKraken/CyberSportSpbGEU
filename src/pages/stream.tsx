@@ -1,28 +1,36 @@
 import Image from "next/image";
+import { linkSocial } from "../testData/staticData";
 
 const TwitchPage = () => {
   return (
     <section className="container-base min-h-full">
-      <div className="flex gap-[24px]">
+      <a
+        className="flex gap-[24px] justify-center items-center"
+        href={linkSocial[3].url}
+        target="_blank"
+        rel="noreferrer"
+      >
         <h2 className="section-title">следи за нами на twitch</h2>
         <div className="h-[54px] w-[56px] relative">
           <Image src={"/icons/logoTwitchArrow.svg"} layout="fill" alt="" />
         </div>
-      </div>
-      <div className="h-full">
-        <iframe
-          src="https://player.twitch.tv/?channel=wild_griffins&parent=localhost:3000"
-          allowFullScreen={true}
-          width="100%"
-          height="100%"
-        />
-      </div>
+      </a>
+      <Iframe />
     </section>
   );
 };
 
 const Iframe = () => {
-  return <></>;
+  return (
+    <div className="h-full">
+      <iframe
+        src="https://player.twitch.tv/?channel=wild_griffins&parent=localhost:3000"
+        allowFullScreen={true}
+        width="100%"
+        height="100%"
+      />
+    </div>
+  );
 };
 
 const Stream: React.FC = () => (
