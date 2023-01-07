@@ -22,6 +22,9 @@ module.exports = {
       dynamic: "clamp(2rem, 10vw, 60px)",
       titleBigDynamic: "clamp(1rem, 6vw, 90px)",
     },
+    backgroundPosition: {
+      bgbg: "center left 95%",
+    },
     extend: {
       gridTemplateColumns: {
         "news-grid-main": "repeat(auto-fill, minmax(312px, 1fr))",

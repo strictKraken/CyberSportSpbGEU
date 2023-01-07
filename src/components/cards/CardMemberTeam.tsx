@@ -21,7 +21,7 @@ const CardMemberTeam: React.FC<Props> = ({
     <div
       onClick={() => onClickCard(id)}
       className={`relative bg-dark-gray rounded-[8px] overflow-hidden p-4 
-      md:px-[34px] md:py-[36px]
+      md:px-[34px] md:py-[36px] md:min-h-[495px]
       ${className}
       `}
     >

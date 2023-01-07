@@ -38,7 +38,7 @@ const Join = () => {
 
 const TeamsBlock = () => {
   return (
-    <section className="container-base">
+    <section className="container-base pb-[60px] lg:pb-[120px]">
       <h3 className="section-title">Наши команды</h3>
       <div
         className="[&>div]:mb-5

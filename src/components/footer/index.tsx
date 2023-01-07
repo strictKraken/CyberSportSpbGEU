@@ -11,6 +11,7 @@ import IconTelegram from "../icons-svg/IconTelegram";
 import LogoFooter from "/public/icons/halfLogoFooter.svg";
 
 import { socialLinks } from "../../utils/contactLink";
+import { linkSocial1 } from "../../testData/staticData";
 
 interface Props {
   navList: navLink[];
@@ -53,42 +54,42 @@ const Contacts = ({}) => {
         <div className="grid grid-cols-2 gap-5">
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
             <a
-              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
-              href={socialLinks[0].url}
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointe group"
+              href={linkSocial1.twitch}
               target="_blank"
               rel="noreferrer"
             >
-              <IconTwitch />
+              <IconTwitch className="group-hover:fill-purpule" />
             </a>
           </div>
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
             <a
-              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
-              href=""
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer group"
+              href={linkSocial1.discrod}
               target="_blank"
               rel="noreferrer"
             >
-              <IconDiscord />
+              <IconDiscord className="group-hover:fill-purpule" />
             </a>
           </div>
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
             <a
-              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
-              href=""
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer group"
+              href={linkSocial1.vk}
               target="_blank"
               rel="noreferrer"
             >
-              <IconVk />
+              <IconVk className="group-hover:fill-purpule" />
             </a>
           </div>
           <div className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer">
             <a
-              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer"
+              className="[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer group"
               href=""
               target="_blank"
               rel="noreferrer"
             >
-              <IconTelegram />
+              <IconTelegram className="group-hover:fill-purpule" />
             </a>
           </div>
         </div>
@@ -111,7 +112,10 @@ const Navigation = ({ navList }: Props) => {
       <SpoilerBlock isShow={isOpenNav}>
         <ul className="mb-2">
           {navList.map((item: navLink) => (
-            <li key={`link-${item.name}`} className="text-[20px]">
+            <li
+              key={`link-${item.name}`}
+              className="font-heading text-[20px] hover:text-purpule"
+            >
               <Link href={item.path}>{item.name}</Link>
             </li>
           ))}

@@ -41,7 +41,7 @@ const NavMenu = ({ navList }: Props) => {
           isOpen ? "opacity-100 block" : "opacity-0 hidden"
         }  bg-main-bg w-full xl:static z-10 transition-all duration-500 xl:opacity-100 xl:block`}
       >
-        <ul className="flex flex-col items-center h-[100vh] xl:h-auto xl:pt-0 xl:items-start  xl:flex-row xl:gap-10">
+        <ul className="flex flex-col items-center h-[100vh] xl:h-auto xl:pt-0 xl:items-start xl:flex-row xl:gap-10">
           {navList.map((item) => (
             <li
               key={`link-${item.path}`}
@@ -64,7 +64,7 @@ const LinkItem = ({ name, path }: navLink) => {
   return (
     <Link href={path}>
       <span
-        className={`bg-clip-text cursor-pointer ${
+        className={`bg-clip-text cursor-pointer anim-link ${
           router.pathname == path && "text-purpule"
         }  `}
       >
