@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Icons
 const IconTwitch = dynamic(() => import("../components/icons-svg/IconTwitch"), {
@@ -13,12 +12,20 @@ const IconDiscord = dynamic(
     ssr: false,
   },
 );
-
+const IconTelegram = dynamic(
+  () => import("../components/icons-svg/IconTelegram"),
+  {
+    ssr: false,
+  },
+);
+const IconVk = dynamic(() => import("../components/icons-svg/IconVk"), {
+  ssr: false,
+});
 import IconArrowRight from "../components/icons-svg/IconArrowRight";
 // import IconDiscord from "../components/icons-svg/IconDiscord";
 // import IconTwitch from "../components/icons-svg/IconTwitch";
-import IconTelegram from "../components/icons-svg/IconTelegram";
-import IconVk from "../components/icons-svg/IconVk";
+// import IconTelegram from "../components/icons-svg/IconTelegram";
+// import IconVk from "../components/icons-svg/IconVk";
 
 import PurpleButton from "../components/buttons/BaseButton";
 
@@ -63,7 +70,7 @@ const SectionCarusel = () => (
 
 const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
   return (
-    <div className="relative h-[100vh] min-h-[655px]">
+    <div className={`relative min-h-[555px] h-[90vh]`}>
       <div className="absolute top-0 left-0 -z-10 bottom-0 right-0">
         <Image
           src={img}
@@ -204,12 +211,12 @@ const SectionContacts = () => (
       >
         <HorizontCard
           title="присоединяйся в наш discord!"
-          icon={<IconDiscord />}
+          icon={<IconDiscord className="group-hover:fill-purpule" />}
           url="/contacts/discrod"
         />
         <HorizontCard
           title="присоединяйся в наш vk!"
-          icon={<IconVk />}
+          icon={<IconVk className="group-hover:fill-purpule" />}
           url="/contacts/vk"
         />
       </div>
@@ -222,10 +229,13 @@ const SectionContacts = () => (
       >
         <VerticalCard
           title="присоединяйся в наш twitch!"
-          icon={<IconTwitch />}
+          icon={<IconTwitch className="group-hover:fill-purpule" />}
           url="/contacts/twitch"
         />
-        <VerticalCard title="присоединяйся в наш tg" icon={<IconTelegram />} />
+        <VerticalCard
+          title="присоединяйся в наш tg"
+          icon={<IconTelegram className="group-hover:fill-purpule" />}
+        />
       </div>
     </div>
   </section>

@@ -33,6 +33,7 @@ const VerticalCard: React.FC<CardSocialT> = ({
       <div
         className="h-[105px] [&>svg]:w-[95px] [&>svg]:h-[95px]  
         md:mt-auto
+        group-hover:fill-purpule
       "
       >
         {icon}

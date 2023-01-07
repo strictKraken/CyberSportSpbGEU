@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/my-swiper.css";
+import "../styles/animationLink.css";
 import type { AppProps } from "next/app";
 import MainLayout from "../components/layouts/MainLayout";
 import Meta from "../utils/meta/Meta";

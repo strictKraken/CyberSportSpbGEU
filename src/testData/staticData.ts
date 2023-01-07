@@ -52,3 +52,9 @@ export const linkSocial: linkSocialT[] = [
     url: "https://www.twitch.tv/wild_griffins",
   },
 ];
+
+export const linkSocial1 = {
+  vk: "https://vk.com/uneconcybersport",
+  discrod: "https://discord.gg/GNWpnaKv",
+  twitch: "https://www.twitch.tv/wild_griffins",
+};
