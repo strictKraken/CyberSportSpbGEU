@@ -50,7 +50,7 @@ const TeamsBlock = () => {
           imgUrl={"/images/pageTeams/dotaCard.png"}
           nameImgUrl={"/images/pageTeams/dotaName.svg"}
           name="dota"
-          url="/teams/dota"
+          url={`/teams/dota`}
         />
         <CardTeam
           imgUrl={"/images/pageTeams/csCard.png"}

@@ -29,6 +29,7 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    color: #fff;
   }
   body {
     color: #fff;
@@ -37,10 +38,6 @@ a {
 }
 
 main {
-  background-color: #1c1c1e;
-}
-
-footer {
   background-color: #1c1c1e;
 }
 

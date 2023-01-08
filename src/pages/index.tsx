@@ -170,7 +170,7 @@ const SectionNews = () => (
           title={item.title}
           subTitle={item.date}
           imageUrl={item.img}
-        ></CardNews>
+        />
       ))}
       <div className="">
         <PurpleButton className="" onClick={() => {}}>
