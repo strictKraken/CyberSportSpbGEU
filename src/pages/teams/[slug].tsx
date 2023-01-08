@@ -34,9 +34,9 @@ const TeamBlock: React.FC<Team> = ({ teamName, members }) => {
       >
         {teamName}
       </h3>
-      <div className="md:grid md:grid-cols-news-grid-main md:gap-6">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-news-grid-main md:gap-6">
         {members.map((item) => (
-          <CardMemberTeam key={item.id} {...item} className="mb-4 md:mb-0" />
+          <CardMemberTeam key={item.id} {...item} />
         ))}
       </div>
     </div>

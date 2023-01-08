@@ -35,7 +35,7 @@ module.exports = {
         "purple-dark": "#4B2E9C",
         "dark-gray": "#333336",
         bgDark: "rgba(34, 30, 38, 0.51)",
-        shadowFooter: "rgba(13, 13, 13)",
+        shadowFooter: "rgba(13, 13, 13, 1)",
       },
       keyframes: {
         lineInfinity: {

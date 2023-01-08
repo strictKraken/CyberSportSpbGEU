@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { siteName, titleMerge } from "../../config/seo.config";
 
-const Meta: React.FC<ISeo> = ({ title, description, image, children }) => {
+const Meta: React.FC<ISeo> = ({ title, description, image }) => {
   const { asPath } = useRouter();
   const currentUrl = `${process.env.APP_URL}${asPath}`;
 

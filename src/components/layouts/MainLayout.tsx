@@ -1,7 +1,9 @@
-import Header from "../header";
-import Footer from "../footer";
-import { navLinks } from "../../utils/headerData";
-import PageLayout from "./PageLayout";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+const Header = dynamic(() => import("../header"), {});
+const PageLayout = dynamic(() => import("./PageLayout"));
+const Footer = dynamic(() => import("../footer"));
 
 type Props = {
   children: React.ReactNode;
@@ -10,10 +12,12 @@ type Props = {
 const MainLayout: React.FC<Props> = ({ children }) => (
   <>
     <Header />
-    <PageLayout>
-      <main>{children}</main>
-    </PageLayout>
-    <Footer navList={navLinks} />
+    <Suspense>
+      <PageLayout>
+        <main>{children}</main>
+      </PageLayout>
+    </Suspense>
+    <Footer />
   </>
 );
 

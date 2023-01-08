@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import PurpleButton from "../../components/buttons/BaseButton";
 
-import { Teams } from "./data";
+import { Teams } from "../../utils/dataTeams";
 
 const Description = () => (
   <section className="container-base">
@@ -170,11 +170,11 @@ const HistoryOfClub = () => {
               "
               >
                 <ul className="mb-[24px] [&>li]:mb-3 [&>li]:text-white [&>li]:text-center lg:pt-[10%]">
-                  <li>Владимир "NyRX" Блинов</li>
-                  <li>Матвей "notasport" Лажа</li>
-                  <li>Айк "hayk1k" Алавердян</li>
-                  <li>Алексей "RentG3n" Калинкин</li>
-                  <li>Данил "Kira" Зенков</li>
+                  <li>Владимир {"NyRX"} Блинов</li>
+                  <li>Матвей {"notasport"} Лажа</li>
+                  <li>Айк {"hayk1k"} Алавердян</li>
+                  <li>Алексей {"RentG3n"} Калинкин</li>
+                  <li>Данил {"Kira"} Зенков</li>
                 </ul>
               </div>
               <div

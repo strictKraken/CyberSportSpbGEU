@@ -10,12 +10,8 @@ import IconVk from "../icons-svg/IconVk";
 import IconTelegram from "../icons-svg/IconTelegram";
 import LogoFooter from "/public/icons/halfLogoFooter.svg";
 
-import { socialLinks } from "../../utils/contactLink";
 import { linkSocial1 } from "../../testData/staticData";
-
-interface Props {
-  navList: navLink[];
-}
+import { navLinks as navList } from "../../utils/headerData";
 
 const Info = () => {
   return (
@@ -98,7 +94,7 @@ const Contacts = ({}) => {
   );
 };
 
-const Navigation = ({ navList }: Props) => {
+const Navigation = ({ navList }: any) => {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
 
   return (
@@ -125,9 +121,9 @@ const Navigation = ({ navList }: Props) => {
   );
 };
 
-const Footer: React.FC<Props> = ({ navList }) => {
+const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-main-bg overflow-hidden bottom-0 z-[-1] fixed h-[372px]">
+    <footer className="w-full bg-main-bg overflow-y-scroll bottom-0 z-[-1] fixed h-[372px]">
       <div className="relative h-full">
         <div className="container mx-auto max-w-[1360px] px-5 pb-[70px]">
           <div

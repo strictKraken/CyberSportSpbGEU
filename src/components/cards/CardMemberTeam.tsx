@@ -20,7 +20,7 @@ const CardMemberTeam: React.FC<Props> = ({
   return (
     <div
       onClick={() => onClickCard(id)}
-      className={`relative bg-dark-gray rounded-[8px] overflow-hidden p-4 
+      className={`relative bg-dark-gray rounded-[8px] overflow-hidden p-4 min-h-[200px] 
       md:px-[34px] md:py-[36px] md:min-h-[495px]
       ${className}
       `}
@@ -35,13 +35,18 @@ const CardMemberTeam: React.FC<Props> = ({
       </div>
       <div className="flex flex-col h-full justify-end">
         <h4
-          className="text-[20px] font-heading text-white text-center mb-2 
+          className="text-[15px] md:text-[20px] font-heading text-white text-center mb-2 
           md:mb-4
           "
         >
           {name}
         </h4>
-        <span className="block text-center text-[15px]">{status}</span>
+        <span
+          className="block text-center text-[12px]
+          md:text-[15px]"
+        >
+          {status}
+        </span>
       </div>
     </div>
   );
