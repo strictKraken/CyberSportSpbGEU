@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const MainLayout = dynamic(() => import("../components/layouts/MainLayout"));
 
@@ -10,6 +11,7 @@ import "../styles/animationLink.css";
 import "../styles/my-swiper.css";
 
 import Meta from "../utils/meta/Meta";
+import { defaultConfig } from "next/dist/server/config-shared";
 // import Header from "../components/header";
 const Header = dynamic(() => import("../components/header"), { ssr: false });
 
@@ -40,17 +42,27 @@ function Loading() {
   );
 }
 
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Meta
-        title="Киберспорт СПБГЭУ"
-        description="Киберспортивный клуб от СПБГЭУ"
-      />
-      <MainLayout>
-        <Loading />
-        <Component {...pageProps} />
-      </MainLayout>
+      <QueryClientProvider client={queryClient}>
+        <Meta
+          title="Киберспорт СПБГЭУ"
+          description="Киберспортивный клуб от СПБГЭУ"
+        />
+        <MainLayout>
+          <Loading />
+          <Component {...pageProps} />
+        </MainLayout>
+      </QueryClientProvider>
     </>
   );
 }

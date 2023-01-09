@@ -22,10 +22,6 @@ const IconVk = dynamic(() => import("../components/icons-svg/IconVk"), {
   ssr: false,
 });
 import IconArrowRight from "../components/icons-svg/IconArrowRight";
-// import IconDiscord from "../components/icons-svg/IconDiscord";
-// import IconTwitch from "../components/icons-svg/IconTwitch";
-// import IconTelegram from "../components/icons-svg/IconTelegram";
-// import IconVk from "../components/icons-svg/IconVk";
 
 import PurpleButton from "../components/buttons/BaseButton";
 
@@ -46,27 +42,47 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-import { SlidesData } from "../testData/HomePage/HomePage";
 import { ShortNewsCard, SlideData } from "../types/globalTypes";
 
-const SectionCarusel = () => (
-  <section className="">
-    <Swiper
-      slidesPerView={1}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Pagination, Navigation]}
-      navigation={true}
-    >
-      {SlidesData.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <CaruselSlide {...slide}></CaruselSlide>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </section>
-);
+const SectionCarusel = () => {
+  const { data: response } = useQuery(
+    ["Slider"],
+    () => MainContentServices.getSliderData(),
+    {
+      select: ({ data }) =>
+        data.data.map((item: any) => {
+          return {
+            id: item.id,
+            ...item.attributes,
+            img: item.attributes.ContentImage.data.attributes.formats.large.url,
+          };
+        }),
+    },
+  );
+
+  console.log("reponse = ", response);
+  return (
+    <section className="">
+      <Swiper
+        slidesPerView={1}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination, Navigation]}
+        navigation={true}
+      >
+        {response?.map((slide: SlideData) => (
+          <SwiperSlide key={slide.id}>
+            <CaruselSlide
+              {...slide}
+              img={`http://localhost:1337${slide.img}`}
+            ></CaruselSlide>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
+};
 
 const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
   return (
@@ -186,6 +202,8 @@ import CardNews from "../components/cards/CardNews";
 import VerticalCard from "../components/cards/cardSocial/verticalCard";
 import HorizontCard from "../components/cards/cardSocial/horizontCard";
 import dynamic from "next/dynamic";
+import { useQueries, useQuery } from "react-query";
+import { MainContentServices } from "../services/mainContent";
 const SectionContacts = () => (
   <section className="container-base pb-[60px]">
     <h3

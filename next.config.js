@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   distDir: "build",
+  images: {
+    domains: ["localhost", "http://localhost", "http://localhost:1337"],
+  },
   async redirects() {
     return [
       {
