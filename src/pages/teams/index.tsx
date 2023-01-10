@@ -70,6 +70,8 @@ const TeamsBlock = () => {
           name="sc"
           url={"teams/sc"}
         />
+        <CardTeam name="valorant" imgUrl={""} nameImgUrl={""} />
+        <CardTeam name="clash" imgUrl={""} nameImgUrl={""} />
       </div>
     </section>
   );
