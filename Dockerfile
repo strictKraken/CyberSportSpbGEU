@@ -1,9 +1,8 @@
-FROM node:16
-RUN apt update
-COPY ./ /app
+FROM node:16-alpine
 WORKDIR /app
-RUN yarn install && yarn build
-FROM nginx
-RUN mkdir /app
-COPY --from=0 /app/build /app
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY . .
+RUN yarn
+RUN yarn build
+
+EXPOSE 3000
+CMD yarn start
