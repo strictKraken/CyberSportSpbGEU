@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  cybersportweb:
+    container_name: front-cyber-sport
+    build:
+      context: ./
+    networks:
+      - webTest
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    networks:
+      - webTest
+
+networks:
+  webTest:
+    driver: bridge
