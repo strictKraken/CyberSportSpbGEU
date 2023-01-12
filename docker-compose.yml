@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  cybersportweb:
+    container_name: front-cyber-sport
+    platform: "linux/amd64"
+    build:
+      context: ./
+    networks:
+      - cybersportweb
+  nginx:
+    container_name: nginx-for-cyber-sport
+    platform: "linux/amd64"
+    build:
+      context: ./nginx
+    ports:
+      - 81:80
+    networks:
+      - cybersportweb
+
+networks:
+  cybersportweb:
+    driver: bridge

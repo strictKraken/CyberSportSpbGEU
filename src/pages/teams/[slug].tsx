@@ -2,8 +2,10 @@ import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import { Team } from "../../types/globalTypes";
 
-import data from "../../testData/Teams/dotaTeams.json";
 import CardMemberTeam from "../../components/cards/CardMemberTeam";
+import { useQuery } from "react-query";
+import { TeamServices } from "../../services/teams";
+import { useRouter } from "next/router";
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
@@ -15,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
-      teams: data.teams,
+      teams: [],
     },
   };
 };
@@ -76,10 +78,32 @@ interface Props {
   teams: Team[];
 }
 const TeamPage: NextPage<Props> = ({ teams }) => {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  const { data: response } = useQuery(
+    "teams list",
+    () => TeamServices.getAll(slug as string),
+    {
+      select: ({ data }) =>
+        data.data.map((item: any) => {
+          return {
+            id: item.id,
+            ...item.attributes,
+            members: [
+              ...item.attributes.members.data.map(({ id, attributes }: any) => {
+                return { id: id, ...attributes };
+              }),
+            ],
+          };
+        }),
+    },
+  );
+
   return (
-    <div className="">
+    <div>
       <SectionTitle />
-      <SectionTeams teams={teams} />
+      <SectionTeams teams={response} />
     </div>
   );
 };
