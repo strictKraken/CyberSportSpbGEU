@@ -18,14 +18,37 @@ const Join = () => {
       </div>
       <div>
         <h2
-          className="section-title text-titleBigDynamic relative
-          after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[8px]
-          after:bg-dotPattern bg-repeat-space
+          className="section-title text-titleBigDynamic relative overflow-hidden w-fit
           "
         >
           играй
+          <div className="gap-[10px] hidden md:flex">
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+          </div>
+          <div className="gap-[8px] flex md:hidden ">
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] " />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+          </div>
         </h2>
-        <div></div>
       </div>
       <div>
         <h2

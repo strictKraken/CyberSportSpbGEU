@@ -34,11 +34,8 @@ import "swiper/css/navigation";
 import { imagesGames as listGames } from "../testData/staticData";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const news = [];
   return {
-    props: {
-      // news,
-    },
+    props: {},
   };
 };
 
@@ -61,7 +58,7 @@ const SectionCarusel = () => {
   );
 
   return (
-    <section className="max-w-[1440px]">
+    <section className="">
       <Swiper
         slidesPerView={1}
         pagination={{
@@ -158,44 +155,62 @@ const SectionInfo = () => {
 };
 
 import { getLastNews } from "../testData/HomePage/HomePage";
-const SectionNews = () => (
-  <section
-    className="container-base 
+const SectionNews = () => {
+  const { data: response } = useQuery(
+    ["News"],
+    () => NewsServices.getLastNews(),
+    {
+      select: ({ data }) =>
+        data.data.map((item: any) => {
+          return {
+            id: item.id,
+            ...item.attributes,
+            data: item.publishedAt,
+          };
+        }),
+    },
+  );
+
+  return (
+    <section
+      className="container-base 
     py-[40px]
     lg:pt-[140px] lg:pb-[60px]
     "
-  >
-    <h3
-      className="section-title
+    >
+      <h3
+        className="section-title
       mb-5
       lg:mb-[40px]
     "
-    >
-      последние новости
-    </h3>
-    <div
-      className="grid gap-6
+      >
+        последние новости
+      </h3>
+      <div
+        className="grid gap-6
       md:grid-cols-news-grid-main
       lg:items-center
     "
-    >
-      {getLastNews.map((item: ShortNewsCard) => (
-        <CardNews
-          key={item.id}
-          title={item.title}
-          subTitle={item.date}
-          imageUrl={item.img}
-        />
-      ))}
-      <div className="">
-        <PurpleButton className="" onClick={() => {}}>
-          все новости
-          <IconArrowRight />
-        </PurpleButton>
+      >
+        {Boolean(response) &&
+          response.map((item: ShortNewsCard) => (
+            <CardNews
+              key={item.id}
+              title={item.title}
+              subTitle={item.date}
+              imageUrl={item.img}
+            />
+          ))}
+        <div>
+          <PurpleButton>
+            все новости
+            <IconArrowRight />
+          </PurpleButton>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 import CardNews from "../components/cards/CardNews";
 import VerticalCard from "../components/cards/cardSocial/verticalCard";
@@ -203,6 +218,9 @@ import HorizontCard from "../components/cards/cardSocial/horizontCard";
 import dynamic from "next/dynamic";
 import { useQueries, useQuery } from "react-query";
 import { MainContentServices } from "../services/mainContent";
+import { NewsServices } from "../services/news";
+import Link from "next/link";
+import BaseButtonLink from "../components/buttons/BaseButtonLing";
 const SectionContacts = () => (
   <section className="container-base pb-[60px]">
     <h3
