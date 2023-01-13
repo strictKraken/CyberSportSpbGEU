@@ -35,6 +35,7 @@ module.exports = {
         "purple-dark": "#4B2E9C",
         "dark-gray": "#333336",
         bgDark: "rgba(34, 30, 38, 0.51)",
+        bgImage: "rgba(28, 28, 30, 0.45)",
         shadowFooter: "rgba(13, 13, 13, 1)",
       },
       keyframes: {
@@ -42,11 +43,19 @@ module.exports = {
           "0%": { left: "0%" },
           "100%": { left: "-100%" },
         },
+        flip360: {
+          "0%": { transform: "rotateY(0)" },
+          "50%": { transform: "rotateY(180deg)" },
+          "100%": { transform: "rotateY(360deg)" },
+        },
       },
       animation: {
         scrollLine: "lineInfinity 15s linear infinite",
+        flipFlap: "flip360 1s linear infinite",
       },
-      backgroundImage: {},
+      backgroundImage: {
+        dotPattern: "url('/images/pattern/pattern-dot.png')",
+      },
     },
   },
   plugins: [],

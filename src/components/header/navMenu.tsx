@@ -27,12 +27,14 @@ const NavMenu = ({ navList }: Props) => {
             "
       >
         <Link href="/">
-          <Image
-            className="z-20"
-            src="/icons/logo.svg"
-            alt="logo"
-            layout="fill"
-          />
+          <a>
+            <Image
+              className="z-20"
+              src="/icons/logo.svg"
+              alt="logo"
+              layout="fill"
+            />
+          </a>
         </Link>
       </div>
 
@@ -62,14 +64,14 @@ const NavMenu = ({ navList }: Props) => {
 const LinkItem = ({ name, path }: navLink) => {
   const router = useRouter();
   return (
-    <Link href={path}>
-      <span
-        className={`bg-clip-text cursor-pointer anim-link ${
+    <Link href={path} className="relative">
+      <a
+        className={` bg-clip-text cursor-pointer anim-link ${
           router.pathname == path && "text-purpule"
         }  `}
       >
         {name}
-      </span>
+      </a>
     </Link>
   );
 };

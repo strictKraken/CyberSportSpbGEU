@@ -1,11 +1,12 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
-import Image from "next/image";
+import { default as ImageNext } from "next/image";
 import { Team } from "../../types/globalTypes";
 
 import CardMemberTeam from "../../components/cards/CardMemberTeam";
 import { useQuery } from "react-query";
 import { TeamServices } from "../../services/teams";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
@@ -60,16 +61,30 @@ const SectionTeams: React.FC<Props> = ({ teams }) => {
   );
 };
 
-const SectionTitle = () => {
-  const tmpUrlBanner = "/images/banners/banerDota2.jpg";
+const SectionTitle = ({ titleImg }: any) => {
+  const bannerUrlImage = `/images/banners/banner_${titleImg}.png`;
 
   return (
     <div
-      className="w-full h-[265px] relative mb-8
+      className="w-full h-[265px] relative mb-8 max-w-[1440px] mx-auto
       md:mb-[60px]
+      bg-[rgba(28, 28, 30, 0.5)]
+      backdrop-blur-[2px]
     "
     >
-      <Image src={tmpUrlBanner} layout="fill" objectFit="cover" alt="banner" />
+      <div
+        className="absolute top-0 left-0 w-full h-full
+        backdrop-blur-[2px] bg-bgImage
+        z-10
+        "
+      />
+      <ImageNext
+        className=""
+        src={bannerUrlImage}
+        layout="fill"
+        objectFit="cover"
+        alt=""
+      />
     </div>
   );
 };
@@ -101,8 +116,8 @@ const TeamPage: NextPage<Props> = ({ teams }) => {
   );
 
   return (
-    <div>
-      <SectionTitle />
+    <div className="min-h-[400px]">
+      <SectionTitle titleImg={slug} />
       <SectionTeams teams={response} />
     </div>
   );

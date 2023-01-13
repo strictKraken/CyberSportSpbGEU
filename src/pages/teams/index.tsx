@@ -17,8 +17,38 @@ const Join = () => {
         <h2 className="section-title text-titleBigDynamic">присоединяйся</h2>
       </div>
       <div>
-        <h2 className="section-title text-titleBigDynamic">играй</h2>
-        <div></div>
+        <h2
+          className="section-title text-titleBigDynamic relative overflow-hidden w-fit
+          "
+        >
+          играй
+          <div className="gap-[10px] hidden md:flex">
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+          </div>
+          <div className="gap-[8px] flex md:hidden ">
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] " />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+          </div>
+        </h2>
       </div>
       <div>
         <h2
@@ -43,7 +73,6 @@ const TeamsBlock = () => {
       <div
         className="[&>div]:mb-5
         md:[&>div]:mb-0 md:grid md:grid-cols-2 md:gap-6
-      
       "
       >
         <CardTeam
