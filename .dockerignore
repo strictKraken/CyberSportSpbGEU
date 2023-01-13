@@ -4,3 +4,11 @@ scripts
 *Dockerfile*
 node_modules
 .env
+
+*.DS_Store
+.next
+.gitignore
+README.md
+.dockerignore
+LICENSE
+.docker

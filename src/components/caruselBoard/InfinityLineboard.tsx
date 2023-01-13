@@ -35,6 +35,19 @@ const InfinityLineBoard: React.FC<Props> = ({ slides }: Props) => {
             />
           </div>
         ))}
+        {slides.map((i) => (
+          <div
+            className="h-[64px] min-w-[360px] flex justify-center items-start"
+            key={i.id}
+          >
+            <Image
+              src={i.src}
+              alt={i.name}
+              objectPosition="center"
+              objectFit="cover"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

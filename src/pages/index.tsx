@@ -60,9 +60,8 @@ const SectionCarusel = () => {
     },
   );
 
-  console.log("reponse = ", response);
   return (
-    <section className="">
+    <section className="max-w-[1440px]">
       <Swiper
         slidesPerView={1}
         pagination={{

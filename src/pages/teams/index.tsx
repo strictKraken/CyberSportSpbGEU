@@ -17,7 +17,14 @@ const Join = () => {
         <h2 className="section-title text-titleBigDynamic">присоединяйся</h2>
       </div>
       <div>
-        <h2 className="section-title text-titleBigDynamic">играй</h2>
+        <h2
+          className="section-title text-titleBigDynamic relative
+          after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[8px]
+          after:bg-dotPattern bg-repeat-space
+          "
+        >
+          играй
+        </h2>
         <div></div>
       </div>
       <div>
@@ -43,7 +50,6 @@ const TeamsBlock = () => {
       <div
         className="[&>div]:mb-5
         md:[&>div]:mb-0 md:grid md:grid-cols-2 md:gap-6
-      
       "
       >
         <CardTeam
