@@ -1,7 +1,7 @@
 const LoadPage: React.FC = () => {
   return (
-    <div className="text-[40px] absolute top-[116px] w-full h-screen left-0 z-50 bg-main-bg flex justify-center items-center transition-opacity duraion-200 overflow-hidden">
-      <span className="mt-[-10%] [transform-style:preserve-3d] animate-flipFlap">
+    <div className="text-[40px] absolute top-[116px] w-full h-screen left-0  z-50 bg-main-bg flex justify-center items-center transition-opacity duraion-200 overflow-hidden">
+      <div className="mt-[-10%] [transform-style:preserve-3d] animate-flipFlap">
         <svg
           width="200"
           height="800"
@@ -14,7 +14,7 @@ const LoadPage: React.FC = () => {
             fill="#6C48D1"
           />
         </svg>
-      </span>
+      </div>
     </div>
   );
 };

@@ -33,6 +33,14 @@ import "swiper/css/navigation";
 
 import { imagesGames as listGames } from "../testData/staticData";
 
+import CardNews from "../components/cards/CardNews";
+import VerticalCard from "../components/cards/cardSocial/verticalCard";
+import HorizontCard from "../components/cards/cardSocial/horizontCard";
+import dynamic from "next/dynamic";
+import { useQuery } from "react-query";
+import { MainContentServices } from "../services/mainContent";
+import { NewsServices } from "../services/news";
+
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
@@ -174,28 +182,29 @@ const SectionNews = () => {
   return (
     <section
       className="container-base 
-    py-[40px]
-    lg:pt-[140px] lg:pb-[60px]
-    "
+      py-[40px]
+      lg:pt-[140px] lg:pb-[60px]
+      "
     >
       <h3
         className="section-title
-      mb-5
-      lg:mb-[40px]
-    "
+        mb-5
+        lg:mb-[40px]
+        "
       >
         последние новости
       </h3>
       <div
         className="grid gap-6
-      md:grid-cols-news-grid-main
-      lg:items-center
-    "
+        md:grid-cols-news-grid-main
+        lg:items-center
+        "
       >
         {Boolean(response) &&
           response.map((item: ShortNewsCard) => (
             <CardNews
               key={item.id}
+              id={item.id}
               title={item.title}
               subTitle={item.date}
               imageUrl={item.img}
@@ -212,15 +221,6 @@ const SectionNews = () => {
   );
 };
 
-import CardNews from "../components/cards/CardNews";
-import VerticalCard from "../components/cards/cardSocial/verticalCard";
-import HorizontCard from "../components/cards/cardSocial/horizontCard";
-import dynamic from "next/dynamic";
-import { useQueries, useQuery } from "react-query";
-import { MainContentServices } from "../services/mainContent";
-import { NewsServices } from "../services/news";
-import Link from "next/link";
-import BaseButtonLink from "../components/buttons/BaseButtonLing";
 const SectionContacts = () => (
   <section className="container-base pb-[60px]">
     <h3

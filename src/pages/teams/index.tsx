@@ -7,7 +7,12 @@ import CardTeam from "../../components/cards/CardTeam";
 const Join = () => {
   return (
     <section className="container-base pb-[30px] mb:pb-[158px]">
-      <div className="flex items-center gap-[16px]">
+      <div
+        className="flex items-center gap-[16px] 
+        md:gap-[24px]"
+      >
+        <div className="hidden md:block w-[80px] h-[80px] bg-purpule rounded-[50%]" />
+
         <Image
           src={"/images/pageTeams/csLogo.png"}
           width={74}
@@ -50,17 +55,28 @@ const Join = () => {
           </div>
         </h2>
       </div>
-      <div>
-        <h2
-          className="section-title text-titleBigDynamic relative max-w-max
+      <div className="md:flex">
+        <div className="md:order-2">
+          <h2
+            className="section-title text-titleBigDynamic relative max-w-max
           after:content-[''] after:w-full after:h-[8px] after:bg-white after:absolute after:bottom-0 after:left-0"
-        >
-          побеждай
-        </h2>
-        <div></div>
-      </div>
-      <div>
-        <PurpleButton>Стать участником</PurpleButton>
+          >
+            побеждай
+          </h2>
+          <div></div>
+        </div>
+        <div>
+          <p
+            className="font-text 
+          md:max-w-[289px]"
+          >
+            Присоединяйся, становись членом команды и участвуй в киберспортивных
+            турнирах
+          </p>
+          <div className="md:max-w-[275px]">
+            <PurpleButton>Стать участником</PurpleButton>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -69,7 +85,7 @@ const Join = () => {
 const TeamsBlock = () => {
   return (
     <section className="container-base pb-[60px] lg:pb-[120px]">
-      <h3 className="section-title">Наши команды</h3>
+      <h3 className="section-title mb-[20px] md:mb-[40px]">Наши команды</h3>
       <div
         className="[&>div]:mb-5
         md:[&>div]:mb-0 md:grid md:grid-cols-2 md:gap-6
@@ -80,27 +96,35 @@ const TeamsBlock = () => {
           nameImgUrl={"/images/pageTeams/dotaName.svg"}
           name="dota"
           url={`/teams/dota`}
+          widthImage={"380"}
+          hieghtImage={"246"}
         />
         <CardTeam
           imgUrl={"/images/pageTeams/csCard.png"}
           nameImgUrl={"/images/pageTeams/csName.svg"}
           name="cs"
           url={"/teams/cs"}
+          widthImage={"321"}
+          hieghtImage={"246"}
         />
         <CardTeam
           imgUrl={"/images/pageTeams/hsCard.png"}
           nameImgUrl={"/images/pageTeams/hsName.svg"}
           name="cs"
           url={"teams/hs"}
+          widthImage={"367"}
+          hieghtImage={"246"}
         />
         <CardTeam
           imgUrl={"/images/pageTeams/scCard.png"}
           nameImgUrl={"/images/pageTeams/scName.svg"}
           name="sc"
           url={"teams/sc"}
+          widthImage={"364"}
+          hieghtImage={"246"}
         />
-        <CardTeam name="valorant" imgUrl={""} nameImgUrl={""} />
-        <CardTeam name="clash" imgUrl={""} nameImgUrl={""} />
+        {/* <CardTeam name="valorant" imgUrl={""} nameImgUrl={""} />
+        <CardTeam name="clash" imgUrl={""} nameImgUrl={""} /> */}
       </div>
     </section>
   );
