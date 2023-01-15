@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import CardNews, { ICardNews } from "../../components/cards/CardNews";
 import ContainerTabs from "../../components/tabs/ContainerTabs";
 import { NewsServices } from "../../services/news";
+import convertDate from "../../utils/convertDate";
 
 const ContentEvents = () => {
   const { data: response, isLoading } = useQuery(
@@ -14,7 +15,7 @@ const ContentEvents = () => {
           return {
             id: item.id,
             ...item.attributes,
-            date: item.publishedAt,
+            date: convertDate(item.attributes.publishedAt),
             img: item.attributes.preview_img.data.attributes.url,
           };
         }),
@@ -46,7 +47,7 @@ const ContentNews = () => {
           return {
             id: item.id,
             ...item.attributes,
-            date: item.publishedAt,
+            date: convertDate(item.attributes.publishedAt),
             img: item.attributes.preview_img.data.attributes.url,
           };
         }),

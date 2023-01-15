@@ -51,6 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 import { ShortNewsCard, SlideData } from "../types/globalTypes";
+import convertDate from "../utils/convertDate";
 
 const SectionCarusel = () => {
   const { data: response } = useQuery(
@@ -173,7 +174,7 @@ const SectionNews = () => {
           return {
             id: item.id,
             ...item.attributes,
-            data: item.publishedAt,
+            date: convertDate(item.attributes.publishedAt),
             img: item.attributes.preview_img.data.attributes.url,
           };
         }),

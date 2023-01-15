@@ -16,4 +16,8 @@ export const NewsServices = {
       "/articles?sort=createdAt:DESC&pagination[page]=1&pagination[pageSize]=3&pagination[withCount]=true&filters[type_post][$eq]=event&populate=preview_img",
     );
   },
+  async getPostNews(id: string | string[] | undefined) {
+    if (undefined) return null;
+    return instance.get(`/articles/${id}/`);
+  },
 };
