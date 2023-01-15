@@ -3,18 +3,18 @@ import Link from "next/link";
 import SkeletBlockImage from "./skeletBlockImage";
 
 export interface ICardNews {
+  id: string;
   title: string;
   subTitle?: string;
   imageUrl?: any;
-  id: string;
 }
 
 const CardNews: React.FC<ICardNews> = ({ title, subTitle, imageUrl, id }) => {
   return (
-    <Link href={`/ivents/${id}`}>
+    <Link href={`/posts/${id}`}>
       <a>
         <div
-          className="relative cursor-pointer flex flex-col justify-end 
+          className="relative cursor-pointer flex flex-col justify-end overflow-hidden
           md:h-[426px]
           "
         >

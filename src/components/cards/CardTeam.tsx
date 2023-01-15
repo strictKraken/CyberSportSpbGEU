@@ -54,11 +54,15 @@ const CardTeam: React.FC<ICartTeam> = ({
             ></Image>
           </div>
 
-          <div className="flex items-center h-full w-[289px] ml-auto lg:mr-[46px]">
+          <div
+            className="flex items-center justify-center h-full  py-2
+            lg:w-[289px] lg:ml-auto
+            lg:mr-[46px]"
+          >
             <div
               className="relative h-full w-full 
-            md:max-h-[92px] md:max-w-[289px]
-          "
+              md:max-h-[92px] md:max-w-[289px]
+              "
             >
               <Image
                 className=""

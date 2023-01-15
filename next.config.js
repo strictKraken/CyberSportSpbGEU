@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   distDir: "build",
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "http://localhost:1337", ""],
   },
   async redirects() {
     return [

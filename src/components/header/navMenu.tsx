@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Burger from "./burger";
 import { navLink } from "../../types/globalTypes";
 import { useScrollBlock } from "../../hooks/useScrollBlock";
+import useWindowSize, { Size } from "../../hooks/useWindowSize";
 
 type Props = {
   navList: navLink[];
@@ -18,6 +19,19 @@ const NavMenu = ({ navList }: Props) => {
     setIsOpen(!isOpen);
     !isOpen ? blockScroll() : allowScroll();
   };
+
+  const onClickNavItem = () => {
+    setIsOpen(false);
+    allowScroll();
+  };
+
+  const size: Size = useWindowSize();
+
+  useEffect(() => {
+    if (size.width && size.width > 1280 && isOpen) {
+      onClickNavItem();
+    }
+  }, [size, isOpen]);
 
   return (
     <nav className="flex items-center xl:gap-[48px]">
@@ -43,11 +57,15 @@ const NavMenu = ({ navList }: Props) => {
           isOpen ? "opacity-100 block" : "opacity-0 hidden"
         }  bg-main-bg w-full xl:static z-10 transition-all duration-500 xl:opacity-100 xl:block`}
       >
-        <ul className="flex flex-col items-center h-[100vh] xl:h-auto xl:pt-0 xl:items-start xl:flex-row xl:gap-10">
+        <ul
+          className="flex flex-col items-center justify-center h-[100vh] 
+          xl:h-auto xl:pt-0 xl:items-start xl:flex-row xl:gap-10"
+        >
           {navList.map((item) => (
             <li
               key={`link-${item.path}`}
               className="font-heading text-[30px] xl:text-[16px]"
+              onClick={onClickNavItem}
             >
               <LinkItem name={item.name} path={item.path} />
             </li>

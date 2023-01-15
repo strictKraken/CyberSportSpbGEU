@@ -1,8 +1,8 @@
 export interface ITab {
-  id: number;
+  id: string;
   name: string;
   isActive?: boolean;
-  onClickTab: (id: number) => void;
+  onClickTab: (id: string) => void;
 }
 
 const Tab: React.FC<ITab> = ({ id, name, isActive, onClickTab }: ITab) => {
