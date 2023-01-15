@@ -1,6 +1,25 @@
 import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { imagesGames as listGames } from "../testData/staticData";
+
+import CardNews from "../components/cards/CardNews";
+import VerticalCard from "../components/cards/cardSocial/verticalCard";
+import HorizontCard from "../components/cards/cardSocial/horizontCard";
+import dynamic from "next/dynamic";
+import { useQuery } from "react-query";
+import { MainContentServices } from "../services/mainContent";
+import { NewsServices } from "../services/news";
+
+import InfinityLineBoard from "../components/caruselBoard/InfinityLineboard";
 
 // Icons
 const IconTwitch = dynamic(() => import("../components/icons-svg/IconTwitch"), {
@@ -25,14 +44,6 @@ import IconArrowRight from "../components/icons-svg/IconArrowRight";
 
 import PurpleButton from "../components/buttons/BaseButton";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import { imagesGames as listGames } from "../testData/staticData";
-
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
@@ -40,6 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 import { ShortNewsCard, SlideData } from "../types/globalTypes";
+import convertDate from "../utils/convertDate";
 
 const SectionCarusel = () => {
   const { data: response } = useQuery(
@@ -71,7 +83,7 @@ const SectionCarusel = () => {
           <SwiperSlide key={slide.id}>
             <CaruselSlide
               {...slide}
-              img={`http://localhost:1337${slide.img}`}
+              img={`${process.env.NEXT_PUBLIC_BASE_URL}${slide.img}`}
             ></CaruselSlide>
           </SwiperSlide>
         ))}
@@ -86,7 +98,7 @@ const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
       <div className="absolute top-0 left-0 -z-10 bottom-0 right-0">
         <Image
           src={img}
-          alt={title}
+          alt={""}
           objectFit="cover"
           layout="fill"
           className="top-0"
@@ -102,8 +114,6 @@ const CaruselSlide = ({ title, subTitle, img }: SlideData) => {
     </div>
   );
 };
-
-import InfinityLineBoard from "../components/caruselBoard/InfinityLineboard";
 
 const SectionInfo = () => {
   return (
@@ -154,7 +164,6 @@ const SectionInfo = () => {
   );
 };
 
-import { getLastNews } from "../testData/HomePage/HomePage";
 const SectionNews = () => {
   const { data: response } = useQuery(
     ["News"],
@@ -165,7 +174,8 @@ const SectionNews = () => {
           return {
             id: item.id,
             ...item.attributes,
-            data: item.publishedAt,
+            date: convertDate(item.attributes.publishedAt),
+            img: item.attributes.preview_img.data.attributes.url,
           };
         }),
     },
@@ -174,53 +184,47 @@ const SectionNews = () => {
   return (
     <section
       className="container-base 
-    py-[40px]
-    lg:pt-[140px] lg:pb-[60px]
-    "
+      py-[40px]
+      lg:pt-[140px] lg:pb-[60px]
+      "
     >
       <h3
         className="section-title
-      mb-5
-      lg:mb-[40px]
-    "
+        mb-5
+        lg:mb-[40px]
+        "
       >
         последние новости
       </h3>
       <div
         className="grid gap-6
-      md:grid-cols-news-grid-main
-      lg:items-center
-    "
+        md:grid-cols-news-grid-main
+        lg:items-center
+        "
       >
         {Boolean(response) &&
           response.map((item: ShortNewsCard) => (
             <CardNews
               key={item.id}
+              id={item.id}
               title={item.title}
               subTitle={item.date}
-              imageUrl={item.img}
+              imageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}${item.img}`}
             />
           ))}
         <div>
-          <PurpleButton>
-            все новости
-            <IconArrowRight />
-          </PurpleButton>
+          <Link href={"/posts/"}>
+            <PurpleButton>
+              все новости
+              <IconArrowRight />
+            </PurpleButton>
+          </Link>
         </div>
       </div>
     </section>
   );
 };
 
-import CardNews from "../components/cards/CardNews";
-import VerticalCard from "../components/cards/cardSocial/verticalCard";
-import HorizontCard from "../components/cards/cardSocial/horizontCard";
-import dynamic from "next/dynamic";
-import { useQueries, useQuery } from "react-query";
-import { MainContentServices } from "../services/mainContent";
-import { NewsServices } from "../services/news";
-import Link from "next/link";
-import BaseButtonLink from "../components/buttons/BaseButtonLing";
 const SectionContacts = () => (
   <section className="container-base pb-[60px]">
     <h3

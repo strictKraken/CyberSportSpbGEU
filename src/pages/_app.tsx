@@ -67,8 +67,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           title="Киберспорт СПБГЭУ"
           description="Киберспортивный клуб от СПБГЭУ"
         />
+        <Loading />
         <MainLayout>
-          <Loading />
           <Component {...pageProps} />
         </MainLayout>
       </QueryClientProvider>

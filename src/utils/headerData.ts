@@ -11,7 +11,7 @@ export const navLinks: navLink[] = [
   },
   {
     name: "новости",
-    path: "/ivents",
+    path: "/posts",
   },
   {
     name: "команда",

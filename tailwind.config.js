@@ -37,6 +37,7 @@ module.exports = {
         bgDark: "rgba(34, 30, 38, 0.51)",
         bgImage: "rgba(28, 28, 30, 0.45)",
         shadowFooter: "rgba(13, 13, 13, 1)",
+        lightGray: "#B1B1BB",
       },
       keyframes: {
         lineInfinity: {

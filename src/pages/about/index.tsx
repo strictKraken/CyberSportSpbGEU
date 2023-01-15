@@ -5,7 +5,7 @@ import PurpleButton from "../../components/buttons/BaseButton";
 import { Teams } from "../../utils/dataTeams";
 
 const Description = () => (
-  <section className="container-base">
+  <section className="container-base pt-[30px] md:pt-[60px]">
     <div className="">
       <div
         className=" 

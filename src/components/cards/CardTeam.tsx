@@ -5,6 +5,10 @@ export interface ICartTeam {
   nameImgUrl: any;
   url?: string;
   name: string;
+  widthImage: string;
+  hieghtImage: string;
+  widthLogo?: string;
+  hieghtLogo?: string;
 }
 
 const CardTeam: React.FC<ICartTeam> = ({
@@ -12,6 +16,10 @@ const CardTeam: React.FC<ICartTeam> = ({
   nameImgUrl,
   url = "",
   name,
+  widthImage,
+  hieghtImage,
+  widthLogo,
+  hieghtLogo,
 }) => {
   const route = useRouter();
 
@@ -23,20 +31,47 @@ const CardTeam: React.FC<ICartTeam> = ({
   return (
     <>
       <div
-        className="bg-[#333336] rounded-[8px] relative h-[60px] cursor-pointer
+        className="bg-[#333336] rounded-[8px] relative h-[60px] cursor-pointer overflow-hidden
         lg:h-[246px]
-        flex
+        group
         "
         onClick={() => onClickCard()}
       >
-        <div className="relative basis-2/3 hidden lg:block">
-          <Image src={imgUrl} alt="team image" layout="fill"></Image>
-        </div>
-        <div
-          className="relative h-full basis-full
-          lg:mr-[46px] lg:basisc-1/3 "
-        >
-          <Image src={nameImgUrl} alt="game name" layout="fill"></Image>
+        <div className="bg-transparent opacity-100 transition-opacity 100s group-hover:bg-dark-gray group-hover:opacity-50 relative w-full h-full">
+          <div
+            className="absolute top-0 left-0 w-full h-full hidden 
+          lg:block
+
+          transition-transform 100s ease-in-out group-hover:scale-110
+          "
+          >
+            <Image
+              src={imgUrl}
+              alt="team image"
+              layout="fixed"
+              width={widthImage}
+              height={hieghtImage}
+            ></Image>
+          </div>
+
+          <div
+            className="flex items-center justify-center h-full  py-2
+            lg:w-[289px] lg:ml-auto
+            lg:mr-[46px]"
+          >
+            <div
+              className="relative h-full w-full 
+              md:max-h-[92px] md:max-w-[289px]
+              "
+            >
+              <Image
+                className=""
+                src={nameImgUrl}
+                alt="game name"
+                layout="fill"
+              ></Image>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -37,7 +37,7 @@ const Iframe = () => {
     <div className="h-full">
       <iframe
         className="h-[480px] lg:h-[720px]"
-        src="https://player.twitch.tv/?channel=wild_griffins&parent=localhost:3000"
+        src={`https://player.twitch.tv/?channel=wild_griffins&parent=cybersportspbgeu.ru`}
         allowFullScreen={true}
         width="100%"
         height="100%"
