@@ -1,15 +1,36 @@
 import type { NextPage } from "next";
+import { useQuery } from "react-query";
+import CardNews, { ICardNews } from "../../components/cards/CardNews";
+import ContainerTabs from "../../components/tabs/ContainerTabs";
+import { ITab } from "../../components/tabs/tab";
+import { NewsServices } from "../../services/news";
 
-const Info = () => (
-  <section className="container px-[60px]">
-    <h1 className="font-heading text-3xl">Comming soon...</h1>
-  </section>
-);
+const ContentIvents = () => {
+  return [];
+};
+
+const ContentNews = (data: ICardNews[]) => {
+  return data.map((item: ICardNews) => (
+    <CardNews key={item.id} id={item.id} title={item.title}></CardNews>
+  ));
+};
+
+const Content = () => {
+  const listTabs: string[] = ["Новости", "Ивенты"];
+  // TO:DO change cahed array
+  const { data: response } = useQuery(["news"], () => NewsServices.getNews);
+
+  return (
+    <section className="container-base md:pt-[40px] md:pb-[60px]">
+      <ContainerTabs tabs={listTabs} activeTab={0}></ContainerTabs>
+    </section>
+  );
+};
 
 const Ivents: NextPage = () => (
   <>
     <div className="min-h-screen bg-main-bg">
-      <Info />
+      <Content />
     </div>
   </>
 );

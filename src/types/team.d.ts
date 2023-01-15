@@ -1,0 +1,2 @@
+type Member = {};
+type Team = {};

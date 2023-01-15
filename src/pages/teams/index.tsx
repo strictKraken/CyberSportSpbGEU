@@ -8,67 +8,113 @@ const Join = () => {
   return (
     <section className="container-base pb-[30px] mb:pb-[158px]">
       <div
-        className="flex items-center gap-[16px] 
+        className="flex items-center gap-[16px] pt-4 md:pt-[42px]
         md:gap-[24px]"
       >
         <div className="hidden md:block w-[80px] h-[80px] bg-purpule rounded-[50%]" />
 
         <Image
-          src={"/images/pageTeams/csLogo.png"}
+          src={"/images/pageTeams/csLogo.svg"}
           width={74}
           height={74}
           alt=""
         />
         <h2 className="section-title text-titleBigDynamic">присоединяйся</h2>
       </div>
-      <div>
-        <h2
-          className="section-title text-titleBigDynamic relative overflow-hidden w-fit
-          "
-        >
-          играй
-          <div className="gap-[10px] hidden md:flex">
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+      <div className="flex items-center justify-between md:justify-start md:gap-16">
+        <div className="relative overflow-hidden w-fit">
+          <h2 className="section-title text-titleBigDynamic pb-[14px] leading-[1.5em]">
+            играй
+          </h2>
+          <div className="absolute top-[75%] left-0">
+            <div className="gap-[10px] hidden md:flex">
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] md:w-[24px] md:h-[24px]" />
+            </div>
+            <div className="gap-[4px] flex md:hidden ">
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] " />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+              <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+            </div>
           </div>
-          <div className="gap-[8px] flex md:hidden ">
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px] " />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+        </div>
 
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
-            <div className="rounded-[50%] bg-purpule w-[8px] h-[8px]" />
+        <div>
+          <div className="block md:hidden">
+            <Image
+              src={"/images/pageTeams/screenContent/start-svg.svg"}
+              width={102}
+              height={104}
+              alt=""
+            />
           </div>
-        </h2>
+          <div className="hidden md:block">
+            <Image
+              src={"/images/pageTeams/screenContent/start-svg.svg"}
+              width={208}
+              height={210}
+              alt=""
+            />
+          </div>
+        </div>
+        <div>
+          <div className="md:hidden">
+            <Image
+              src={"/images/pageTeams/screenContent/screenContent1.svg"}
+              width={124}
+              height={123}
+              alt=""
+            />
+          </div>
+        </div>
       </div>
       <div className="md:flex">
-        <div className="md:order-2">
+        <div className="relative md:order-2 mb-[45px] md:ml-auto md:mr-[230px]">
           <h2
             className="section-title text-titleBigDynamic relative max-w-max
-          after:content-[''] after:w-full after:h-[8px] after:bg-white after:absolute after:bottom-0 after:left-0"
+            after:content-[''] after:w-full after:h-[4px] md:after:h-[8px]  after:bg-white after:absolute after:bottom-0 after:left-0
+            "
           >
             побеждай
           </h2>
-          <div></div>
+          <div
+            className="absolute right-0 top-1/2 w-[130px] h-[130px]
+            md:right-[-230px] md:top-0 md:w-[230px] md:h-[230px]
+            "
+          >
+            <Image
+              src={"/images/pageTeams/screenContent/screenContent3.svg"}
+              layout="fill"
+              alt=""
+            />
+          </div>
         </div>
         <div>
           <p
-            className="font-text 
-          md:max-w-[289px]"
+            className="font-text mb-[50px] max-w-[269px] 
+            md:max-w-[289px]"
           >
             Присоединяйся, становись членом команды и участвуй в киберспортивных
             турнирах

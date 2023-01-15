@@ -11,5 +11,7 @@ export const NewsServices = {
       "/articles?sort=createdAt:DES&pagination[page]=1$pagination[pageSize]=8pagination[withCount]=true?",
     );
   },
-  async getIvents() {},
+  async getIvents() {
+    return instance.get("");
+  },
 };
