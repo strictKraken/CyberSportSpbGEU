@@ -31,7 +31,7 @@ const CardTeam: React.FC<ICartTeam> = ({
   return (
     <>
       <div
-        className="bg-[#333336] rounded-[8px] relative h-[60px] cursor-pointer overflow-hidden
+        className="bg-dark-gray rounded-[8px] relative h-[60px] cursor-pointer overflow-hidden
         lg:h-[246px]
         group
         "
