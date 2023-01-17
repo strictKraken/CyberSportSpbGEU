@@ -3,12 +3,6 @@ import { useQuery } from "react-query";
 import CardAchievement from "../../components/cards/CardAchievement";
 import { AchievementServices } from "../../services/achievements.";
 
-const Info = () => (
-  <section className="container px-[60px]">
-    <h1 className="font-heading text-3xl">Comming soon...</h1>
-  </section>
-);
-
 const Content = ({ data }: any) => {
   return (
     <div className="grid grid-cols-2 gap-5">
@@ -26,7 +20,11 @@ const Content = ({ data }: any) => {
 };
 
 const Achievements: NextPage = () => {
-  const { data: response, isFetched } = useQuery(
+  const {
+    data: response,
+    isLoading,
+    isFetched,
+  } = useQuery(
     ["achievemnts"],
     () => AchievementServices.getAchievements(1, 4),
     {
@@ -41,7 +39,6 @@ const Achievements: NextPage = () => {
   );
 
   if (!isFetched) return <></>;
-  console.log("achievements: ", response);
 
   return (
     <>

@@ -10,10 +10,11 @@ export const AchievementServices = {
     );
   },
   /**
-   * get detail acgievemet
+   * get detail achievemet
+   * @param id string
    * @returns
    */
-  async getAchievement() {
-    return instance.get("");
+  async getAchievement(id: any) {
+    return instance.get(`/achievements/${id}?populate=contentImg`);
   },
 };
