@@ -8,7 +8,8 @@ interface ICardAchievement {
   game?: string;
 }
 
-const getIconOfPlace = (place: number) => {
+export const getIconOfPlace = (place: number | undefined | null) => {
+  if (!place) return <div></div>;
   if (place === 1)
     return (
       <Image

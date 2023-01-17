@@ -28,6 +28,7 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         "news-grid-main": "repeat(auto-fill, minmax(312px, 1fr))",
+        "gallery-achievements-grid": "repeat(2, minmax(312px,1fr))",
       },
       colors: {
         "main-bg": "#1c1c1e",

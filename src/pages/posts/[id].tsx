@@ -1,10 +1,9 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
+
 import { NewsServices } from "../../services/news";
-import { remark } from "remark";
-import html from "remark-html";
-import { useState } from "react";
+import useParseMarkDown from "../../hooks/useParseMarkDown";
 import convertDate from "../../utils/convertDate";
 
 export const getServerSideProps = (context: any) => {
@@ -19,8 +18,6 @@ const BannerImage = () => {
 };
 
 const ContentBlock = ({ title, content, date }: any) => {
-  console.log(content);
-
   return (
     <section className="container-base py-[60px]">
       <h2 className="section-title">{title}</h2>
@@ -35,13 +32,7 @@ const ContentBlock = ({ title, content, date }: any) => {
   );
 };
 
-export interface IDetailEvent {
-  // id: string;
-}
-
-const DetailEvent: NextPage<IDetailEvent> = () => {
-  const [isLoadMD, setIsLoadMD] = useState<Boolean>(true);
-  const [contentHtml, setContentHtml] = useState<string>();
+const DetailEvent: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const { data: response, isLoading } = useQuery(
@@ -57,22 +48,17 @@ const DetailEvent: NextPage<IDetailEvent> = () => {
       },
     },
   );
+  const { contentHtml } = useParseMarkDown(response?.content);
 
-  if (isLoading) return <div className="min-h-screen" />;
-  // parse markdown
-  (async () => {
-    const processedContent = await remark().use(html).process(response.content);
-    setContentHtml(processedContent.toString());
-  })();
   return (
     <>
-      {isLoading && isLoadMD ? (
-        <></>
+      {isLoading ? (
+        <div className="min-h-screen" />
       ) : (
         <ContentBlock
           title={response.title}
           content={contentHtml}
-          date={"Сентябрь 2022"}
+          date={response.date}
         />
       )}
     </>

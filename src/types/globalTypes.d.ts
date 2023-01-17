@@ -16,7 +16,7 @@ export type ShortNewsCard = {
   id: string;
   title: string;
   date?: string;
-  img: string | StaticImageData;
+  img: string;
 };
 
 export type linkSocialT = {

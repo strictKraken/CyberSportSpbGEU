@@ -14,7 +14,7 @@ const CardMemberTeam: React.FC<Props> = ({
   className = "",
 }) => {
   const onClickCard = (id: string) => {
-    console.log("member: ", id);
+    // console.log("member: ", id);
   };
 
   return (

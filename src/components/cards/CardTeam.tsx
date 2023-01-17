@@ -24,7 +24,6 @@ const CardTeam: React.FC<ICartTeam> = ({
   const route = useRouter();
 
   const onClickCard = () => {
-    console.log("to ", url, name);
     route.push(url);
   };
 

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import SkeletBlockImage from "./skeletBlockImage";
 
@@ -7,9 +7,16 @@ export interface ICardNews {
   title: string;
   subTitle?: string;
   imageUrl?: any;
+  url: string | null | undefined;
 }
 
-const CardNews: React.FC<ICardNews> = ({ title, subTitle, imageUrl, id }) => {
+const CardNews: React.FC<ICardNews> = ({
+  title,
+  subTitle,
+  imageUrl,
+  id,
+  url,
+}) => {
   return (
     <Link href={`/posts/${id}`}>
       <a>
@@ -19,7 +26,7 @@ const CardNews: React.FC<ICardNews> = ({ title, subTitle, imageUrl, id }) => {
           "
         >
           <div className="absolute w-full z-10 h-full hover:bg-bgDark transition-all ease-linear"></div>
-          {Boolean(imageUrl) ? (
+          {Boolean(url) ? (
             <Image
               src={imageUrl}
               alt="cool-bg-news"
