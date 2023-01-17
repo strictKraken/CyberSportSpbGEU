@@ -13,8 +13,7 @@ import "../styles/my-swiper.css";
 import Meta from "../utils/meta/Meta";
 import { useScrollBlock } from "../hooks/useScrollBlock";
 import LoadPage from "../components/loading";
-import UseScrollToTop from "../hooks/useScrollToTop";
-const Header = dynamic(() => import("../components/header"), { ssr: false });
+// const Header = dynamic(() => import("../components/header"), { ssr: false });
 
 function Loading() {
   const router = useRouter();
@@ -43,13 +42,7 @@ function Loading() {
     };
   }, [router.events, router.asPath, allowScroll, blockScroll]);
 
-  return loading ? (
-    <>
-      <LoadPage />
-    </>
-  ) : (
-    <></>
-  );
+  return loading ? true : false;
 }
 
 export const queryClient = new QueryClient({
@@ -68,9 +61,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           title="Киберспорт СПБГЭУ"
           description="Киберспортивный клуб от СПБГЭУ"
         />
-        <Loading />
         <MainLayout>
-          <Component {...pageProps} />
+          {Loading() ? <LoadPage /> : <Component {...pageProps} />}
         </MainLayout>
       </QueryClientProvider>
     </>
