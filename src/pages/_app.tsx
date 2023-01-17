@@ -40,7 +40,7 @@ function Loading() {
       router.events.off("routeChangeComplete", handleComplete);
       router.events.off("routeChangeError", handleComplete);
     };
-  }, [router.events, router.asPath]);
+  }, [router.events, router.asPath, allowScroll, blockScroll]);
 
   return loading ? (
     <>
