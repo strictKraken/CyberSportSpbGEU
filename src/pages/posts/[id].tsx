@@ -18,8 +18,6 @@ const BannerImage = () => {
 };
 
 const ContentBlock = ({ title, content, date }: any) => {
-  console.log(content);
-
   return (
     <section className="container-base py-[60px]">
       <h2 className="section-title">{title}</h2>

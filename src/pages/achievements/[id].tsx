@@ -20,11 +20,10 @@ type ContentT = {
 const ConvertDateToSeason = (date: string | undefined) => {
   if (!date) return "";
   const result = new Date(date);
-  console.log("result date = ", result.getFullYear(), result.getMonth());
+  // console.log("result date = ", result.getFullYear(), result.getMonth());
 };
 
 const Content: React.FC<ContentT> = ({ place, game, date, content, files }) => {
-  console.log("files = ", files);
   ConvertDateToSeason(date);
   return (
     <section

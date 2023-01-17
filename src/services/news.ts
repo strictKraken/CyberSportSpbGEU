@@ -20,4 +20,9 @@ export const NewsServices = {
     if (undefined) return null;
     return instance.get(`/articles/${id}/`);
   },
+  async getPosts(filter: string, currentPage: number, pageSize: number) {
+    return instance.get(
+      `/articles?sort=createdAt:DESC&pagination[page]=${currentPage}&pagination[pageSize]=${pageSize}&pagination[withCount]=true&filters[type_post][$eq]=${filter}&populate=preview_img`,
+    );
+  },
 };

@@ -175,7 +175,7 @@ const SectionNews = () => {
             id: item.id,
             ...item.attributes,
             date: convertDate(item.attributes.publishedAt),
-            img: item.attributes.preview_img.data.attributes.url,
+            img: item.attributes.preview_img.data?.attributes.url,
           };
         }),
     },
@@ -210,15 +210,20 @@ const SectionNews = () => {
               title={item.title}
               subTitle={item.date}
               imageUrl={`${process.env.NEXT_PUBLIC_BASE_URL}${item.img}`}
+              url={item.img}
             />
           ))}
         <div>
-          <Link href={"/posts/"}>
-            <PurpleButton>
-              все новости
-              <IconArrowRight />
-            </PurpleButton>
-          </Link>
+          {/* <Link href={"/posts/"}> */}
+          <PurpleButton>
+            <Link href={"/posts/"}>
+              <a className="flex gap-4 items-center">
+                все новости
+                <IconArrowRight />
+              </a>
+            </Link>
+          </PurpleButton>
+          {/* </Link> */}
         </div>
       </div>
     </section>

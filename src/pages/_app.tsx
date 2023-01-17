@@ -13,6 +13,7 @@ import "../styles/my-swiper.css";
 import Meta from "../utils/meta/Meta";
 import { useScrollBlock } from "../hooks/useScrollBlock";
 import LoadPage from "../components/loading";
+import UseScrollToTop from "../hooks/useScrollToTop";
 const Header = dynamic(() => import("../components/header"), { ssr: false });
 
 function Loading() {
