@@ -78,12 +78,12 @@ const Content = () => {
     <section className="container-base pt-[40px] pb-[60px] md:pt-[40px] md:pb-[60px]">
       <ContainerTabs tabs={Tabs} activeTab="news">
         <div
-          label="news"
+          {...{ label: "news" }}
           className="grid grid-cols-2 md:grid-cols-news-grid-main gap-6 "
         >
           <ContentNews />
         </div>
-        <div label="events" className="grid grid-cols-2 gap-6">
+        <div {...{ label: "events" }} className="grid grid-cols-2 gap-6">
           <ContentEvents />
         </div>
       </ContainerTabs>

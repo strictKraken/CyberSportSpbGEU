@@ -31,6 +31,7 @@ const NavMenu = ({ navList }: Props) => {
     if (size.width && size.width > 1280 && isOpen) {
       onClickNavItem();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [size, isOpen]);
 
   return (
