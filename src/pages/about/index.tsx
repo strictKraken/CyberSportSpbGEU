@@ -332,7 +332,13 @@ const JoinUs = () => {
           </p>
         </div>
         <PurpleButton className="order-2 md:max-w-[275px] hover:text-purple-dark hover:font-semibold">
-          Стать участником
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeSn4Urdw1HIjydN1ivAuxQxOyYBM5hWc3CylRMl4OvA6qgEg/viewform"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Стать участником
+          </a>
         </PurpleButton>
       </div>
     </section>
