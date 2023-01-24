@@ -4,7 +4,12 @@ const nextConfig = {
   swcMinify: true,
   distDir: "build",
   images: {
-    domains: ["localhost", "http://localhost:1337", "cybersportspbgeu.ru"],
+    domains: [
+      "localhost",
+      "http://localhost:1337",
+      "cybersportspbgeu.ru",
+      "https://cybersportspbgeu.ru",
+    ],
   },
   async redirects() {
     return [
