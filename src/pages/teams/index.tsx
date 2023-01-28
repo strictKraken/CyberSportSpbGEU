@@ -120,15 +120,13 @@ const Join = () => {
             турнирах
           </p>
           <div className="md:max-w-[275px]">
-            <PurpleButton>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeSn4Urdw1HIjydN1ivAuxQxOyYBM5hWc3CylRMl4OvA6qgEg/viewform"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Стать участником
-              </a>
-            </PurpleButton>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeSn4Urdw1HIjydN1ivAuxQxOyYBM5hWc3CylRMl4OvA6qgEg/viewform"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <PurpleButton>Стать участником</PurpleButton>
+            </a>
           </div>
         </div>
       </div>

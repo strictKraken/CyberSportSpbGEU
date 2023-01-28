@@ -331,15 +331,16 @@ const JoinUs = () => {
             квалификаций “Red Bull Campus Clutch” по Valorant
           </p>
         </div>
-        <PurpleButton className="order-2 md:max-w-[275px] hover:text-purple-dark hover:font-semibold">
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeSn4Urdw1HIjydN1ivAuxQxOyYBM5hWc3CylRMl4OvA6qgEg/viewform"
-            target="_blank"
-            rel="noreferrer"
-          >
+        <a
+          className="order-2"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeSn4Urdw1HIjydN1ivAuxQxOyYBM5hWc3CylRMl4OvA6qgEg/viewform"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <PurpleButton className=" md:max-w-[275px] hover:text-purple-dark hover:font-semibold">
             Стать участником
-          </a>
-        </PurpleButton>
+          </PurpleButton>
+        </a>
       </div>
     </section>
   );
