@@ -63,20 +63,20 @@ const Join = () => {
 
         <div>
           <div className="block md:hidden">
-            <Image
+            {/* <Image
               src={"/images/pageTeams/screenContent/start-svg.svg"}
               width={102}
               height={104}
               alt=""
-            />
+            /> */}
           </div>
           <div className="hidden md:block">
-            <Image
+            {/* <Image
               src={"/images/pageTeams/screenContent/start-svg.svg"}
               width={208}
               height={210}
               alt=""
-            />
+            /> */}
           </div>
         </div>
         <div>
